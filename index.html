@@ -3,386 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - drg. Yuli Kartilla Panjaitan</title>
+    <title>drg. Yuli Kartilla Panjaitan | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Poppins', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+        header { padding: 20px 8%; background: #fff; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 700; color: #1d2939; }
+        nav a { margin-left: 20px; text-decoration: none; color: #475467; font-weight: 600; }
+        .hero { padding: 100px 8%; text-align: center; background: #f9fafb; }
+        .btn { padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block; margin: 5px; }
+        .btn-green { background: #26d4a5; color: white; }
+        .btn-dark { background: #1d2939; color: white; }
+        section { padding: 80px 8%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { padding: 30px; border: 1px solid #eee; border-radius: 12px; }
+        footer { background: #111827; color: #bcbfcd; padding: 40px 8%; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">drg. YULI PANJAITAN</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </header>
 
-        body {
-            background-color: #ffffff;
-            color: #333;
-            overflow-x: hidden;
-        }
+    <section class="hero">
+        <h1>Healthy Teeth, Beautiful Smile</h1>
+        <p>Professional Dentistry Services in Batam & Medan</p>
+        <div style="margin-top: 20px;">
+            <a href="CV_drg_Yuli_Kartilla_Panjaitan.pdf" class="btn btn-dark" download>Download CV</a>
+        </div>
+    </section>
 
-        /* Navigation Bar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 8%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-            transition: all 0.3s ease-in-out;
-        }
+    <section id="locations">
+        <h2>Practice Locations</h2>
+        <div class="grid">
+            <div class="card"><h3>Lanera Dental Care</h3><p>Batam</p></div>
+            <div class="card"><h3>TP Dental</h3><p>Batam</p></div>
+        </div>
+    </section>
 
-        header.scrolled {
-            padding: 12px 8%;
-            background: #ffffff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 20px;
-            color: #1d2939;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .logo i {
-            color: #26d4a5;
-            margin-right: 10px;
-            font-size: 24px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #475467;
-            font-size: 14px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            color: #26d4a5;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* SECTION: Hero Banner */
-        .hero-section {
-            padding: 180px 8% 100px 8%;
-            background: linear-gradient(135deg, #f5fcf9 0%, #ffffff 100%);
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 42px;
-            color: #1d2939;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .hero-text h1 span {
-            color: #26d4a5;
-        }
-
-        .hero-text p {
-            font-size: 15px;
-            color: #475467;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: #26d4a5;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 5px 15px rgba(38, 212, 165, 0.3);
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #1fc094;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(38, 212, 165, 0.4);
-        }
-
-        .hero-img-box {
-            position: relative;
-            text-align: right;
-        }
-
-        .hero-img-box img {
-            width: 85%;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-        }
-
-        /* SECTION: Services */
-        .services-section {
-            padding: 90px 8%;
-            background: #ffffff;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 28px;
-            color: #1d2939;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            font-size: 14px;
-            color: #26d4a5;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 50px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: #ffffff;
-            padding: 35px 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid #f2f4f7;
-            transition: all 0.3s;
-            text-align: left;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-color: #26d4a5;
-        }
-
-        .service-icon {
-            font-size: 30px;
-            color: #26d4a5;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 16px;
-            color: #1d2939;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .service-card p {
-            font-size: 13px;
-            color: #667085;
-            line-height: 1.6;
-        }
-
-        /* SECTION: Locations & Schedules */
-        .locations-section {
-            padding: 90px 8%;
-            background: #f9fafb;
-            text-align: center;
-        }
-
-        .locations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .location-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid #eaecf0;
-            text-align: left;
-            padding: 35px;
-        }
-
-        .location-card h3 {
-            font-size: 18px;
-            color: #1d2939;
-            margin-bottom: 15px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .location-card h3 i {
-            color: #26d4a5;
-        }
-
-        .schedule-info {
-            list-style: none;
-            font-size: 13.5px;
-            color: #475467;
-        }
-
-        .schedule-info li {
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px dashed #f2f4f7;
-            padding-bottom: 8px;
-        }
-
-        .schedule-info li span.day {
-            font-weight: 600;
-        }
-
-        /* SECTION: Contact Form */
-        .contact-section {
-            padding: 90px 8%;
-            background: #ffffff;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-        }
-
-        .contact-info h2 {
-            font-size: 28px;
-            color: #1d2939;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .contact-info p {
-            font-size: 14px;
-            color: #475467;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: #1d2939;
-        }
-
-        .info-item i {
-            font-size: 18px;
-            color: #26d4a5;
-            background: #ebf7fd;
-            padding: 12px;
-            border-radius: 50%;
-        }
-
-        .contact-form {
-            background: #f9fafb;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #eaecf0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: #344054;
-            margin-bottom: 6px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d0d5dd;
-            border-radius: 8px;
-            font-size: 13.5px;
-            outline: none;
-            background: white;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: #26d4a5;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: #26d4a5;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(38, 212, 165, 0.2);
-            transition: background 0.3s;
-        }
-
-        .btn-submit:hover {
-            background: #1fc094;
-        }
-
-        /* SECTION: Footer */
-        footer {
-            background-color: #111827;
-            color: #bcbfcd;
-            padding: 60px 8% 30px 8%;
-            font-size: 14px;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand h3 {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 15px;
-            font-weight: 70
+    <footer><p>&copy; 2026 drg. Yuli Kartilla Panjaitan</p></footer>
+</body>
+</html>

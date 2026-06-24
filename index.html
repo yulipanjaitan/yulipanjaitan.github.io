@@ -15,6 +15,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -41,11 +42,13 @@
             font-weight: 700;
             font-size: 20px;
             color: #111;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .logo i {
             color: #26d4a5;
-            margin-right: 8px;
+            margin-right: 10px;
             font-size: 24px;
         }
 
@@ -110,7 +113,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             padding: 0 8%;
@@ -118,35 +121,53 @@
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 580px;
             z-index: 2;
         }
 
         .hero-content h1 {
-            font-size: 44px;
+            font-size: 46px;
             font-weight: 700;
             line-height: 1.2;
             color: #1d2939;
             margin-bottom: 15px;
         }
 
-        .hero-content p {
+        .hero-content p.hero-desc {
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #555;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
+        /* Grouping Ikon dengan Teks */
         .hero-icons {
             display: flex;
-            gap: 15px;
+            gap: 25px;
+            margin-bottom: 5px;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s;
+        }
+
+        .icon-item:hover {
+            transform: translateY(-5px);
         }
 
         .icon-box {
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             background-color: #26d4a5;
             color: white;
             border-radius: 50%;
@@ -155,25 +176,44 @@
             align-items: center;
             font-size: 20px;
             box-shadow: 0 8px 20px rgba(38, 212, 165, 0.3);
-            cursor: pointer;
-            transition: transform 0.3s;
+            transition: background-color 0.3s;
         }
 
-        .icon-box:hover {
-            transform: translateY(-5px);
+        .icon-item:hover .icon-box {
+            background-color: #1d2939;
         }
 
-        /* Hero Image Slider Container */
+        .icon-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #475467;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Tagline Baru di Bawah Ikon Hijau */
+        .hero-tagline {
+            font-size: 14.5px;
+            color: #0c4a60;
+            font-weight: 600;
+            margin-top: 30px;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Bingkai Slider Premium */
         .hero-slider-container {
             position: absolute;
             right: 8%;
-            bottom: 40px;
+            top: 15%;
             width: 42%;
-            height: 75%;
+            height: 68%;
             z-index: 1;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
         .slide {
@@ -184,14 +224,134 @@
             height: 100%;
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover; /* Otomatis resize & auto-crop proporsional */
+            background-size: cover;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
         }
 
-        /* Slide yang aktif akan muncul */
         .slide.active {
             opacity: 1;
+        }
+
+        /* SECTION: Tentang Dokter */
+        .about-section {
+            padding: 90px 8%;
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-img-box {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-details h2 {
+            font-size: 32px;
+            color: #1d2939;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .about-details .subtitle {
+            font-size: 15px;
+            color: #26d4a5;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .about-details p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .skills-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0c4a60;
+            margin-bottom: 12px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .skill-tag {
+            background-color: #ebf7fd;
+            color: #0c4a60;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background-color: #26d4a5;
+            color: white;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .history-block h3 {
+            font-size: 16px;
+            color: #1d2939;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 8px;
+        }
+
+        .history-block h3 i {
+            color: #26d4a5;
+        }
+
+        .history-list {
+            list-style: none;
+        }
+
+        .history-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 13.5px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .history-item::before {
+            content: "•";
+            color: #26d4a5;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-weight: bold;
         }
 
         /* Info Cards Section */
@@ -199,16 +359,14 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2px;
-            padding: 0 8% 50px 8%;
-            margin-top: -60px;
-            position: relative;
-            z-index: 3;
+            padding: 80px 8% 40px 8%;
+            background-color: #f4f8fb;
         }
 
         .card {
             background-color: #bbf3f5;
             padding: 35px;
-            min-height: 340px;
+            min-height: 380px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -237,21 +395,20 @@
         }
 
         .card p {
-            font-size: 13px;
+            font-size: 12.5px;
             color: #444;
-            line-height: 1.6;
-            margin-bottom: 8px;
+            line-height: 1.5;
         }
 
         .card-buttons {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             margin-top: 15px;
             flex-wrap: wrap;
         }
 
         .card-btn {
-            padding: 10px 18px;
+            padding: 9px 14px;
             background-color: white;
             color: #333;
             text-decoration: none;
@@ -264,7 +421,7 @@
             border: none;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .card-btn:hover {
@@ -283,6 +440,106 @@
         .card-btn.maps-btn:hover {
             background-color: #0c4a60;
             color: white;
+        }
+
+        /* SECTION: Footer & Kontak Terpadu */
+        footer {
+            background-color: #111827;
+            color: #bcbfcd;
+            padding: 60px 8% 30px 8%;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .footer-socials-link a {
+            color: #bcbfcd;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+            font-size: 13px;
+        }
+
+        .footer-socials-link a:hover {
+            color: #26d4a5;
+        }
+
+        .footer-links h4, .footer-maps h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #bcbfcd;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 13px;
+        }
+
+        .footer-links ul li a:hover {
+            color: #26d4a5;
+        }
+
+        /* Embed Peta Responsif */
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 45%;
+            position: relative;
+            height: 0;
+            border-radius: 8px;
+        }
+
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 12px;
         }
 
         /* Floating Side Menu */
@@ -329,10 +586,19 @@
             nav ul.active { display: flex; }
             nav ul li { margin: 10px 0; }
             .nav-socials { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
-            .hero { padding: 120px 5% 50px 5%; background: #ebf7fd; min-height: auto; }
-            .hero-content h1 { font-size: 34px; }
-            .hero-slider-container { display: none; } /* Tersembunyi di mobile agar teks terbaca rapi */
-            .info-section { grid-template-columns: 1fr; padding: 20px 5%; margin-top: 20px; }
+            
+            .hero { padding: 130px 5% 50px 5%; background: #ebf7fd; min-height: auto; }
+            .hero-content h1 { font-size: 36px; }
+            .hero-slider-container { display: none; }
+            .hero-icons { gap: 15px; justify-content: flex-start; }
+            
+            .about-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 5%; }
+            .history-grid { grid-template-columns: 1fr; gap: 25px; }
+            
+            .info-section { grid-template-columns: 1fr; padding: 40px 5%; }
+            .card { min-height: auto; padding: 25px; }
+            .footer-container { grid-template-columns: 1fr; gap: 30px; }
+            .map-responsive { padding-bottom: 60%; }
             .side-menu { display: none; }
         }
     </style>
@@ -342,14 +608,15 @@
     <!-- Header / Navigasi -->
     <header>
         <div class="logo">
-            <i class="fa-solid fa-tooth"></i> drg. Yuli Kartilla P.
+            <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
         </div>
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
             <ul id="nav-list">
                 <li><a href="#">Beranda</a></li>
-                <li><a href="#">Tentang Dokter</a></li>
-                <li><a href="#">Kontak</a></li>
+                <li><a href="#tentang-dokter">Tentang Dokter</a></li>
+                <li><a href="#klinik">Lokasi & Jadwal</a></li>
+                <li><a href="#kontak">Hubungi Kami</a></li>
                 <div class="nav-socials">
                     <i class="fa-brands fa-instagram" onclick="window.open('https://www.instagram.com/laneradentalcare/?hl=id', '_blank')" title="Instagram Lanera Dental Care"><span style="font-family:'Poppins',sans-serif; margin-left:4px;">Lanera</span></i>
                     <i class="fa-brands fa-instagram" onclick="window.open('https://www.instagram.com/tpdentalbatam/', '_blank')" title="Instagram TP Dental"><span style="font-family:'Poppins',sans-serif; margin-left:4px;">TP Dental</span></i>
@@ -361,38 +628,97 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Senyum Sehat & Menawan Bersama drg. Yuli</h1>
-            <p>Memberikan Perawatan Gigi Profesional Berkualitas di Lanera Dental Care & TP Dental Batam</p>
+            <h1>Healthy teeth, happy life</h1>
+            <p class="hero-desc">Memberikan Perawatan Gigi Profesional Berkualitas di Lanera Dental Care & TP Dental Batam</p>
+            
+            <!-- Area Ikon dengan Teks dan Fitur Klik -->
             <div class="hero-icons">
-                <div class="icon-box" title="Scaling Gigi"><i class="fa-solid fa-sparkles"></i></div>
-                <div class="icon-box" title="Perawatan Behel"><i class="fa-solid fa-teeth-open"></i></div>
-                <div class="icon-box" title="Kesehatan Anak"><i class="fa-solid fa-child"></i></div>
+                <a href="#klinik" class="icon-item" title="Klik untuk cek jadwal scaling">
+                    <div class="icon-box"><i class="fa-solid fa-sparkles"></i></div>
+                    <span class="icon-label">Scaling Gigi</span>
+                </a>
+                <a href="#klinik" class="icon-item" title="Klik untuk cek jadwal ortodonti">
+                    <div class="icon-box"><i class="fa-solid fa-teeth-open"></i></div>
+                    <span class="icon-label">Behel Gigi</span>
+                </a>
+                <a href="#klinik" class="icon-item" title="Klik untuk cek jadwal perawatan anak">
+                    <div class="icon-box"><i class="fa-solid fa-child"></i></div>
+                    <span class="icon-label">Gigi Anak</span>
+                </a>
             </div>
+
+            <!-- Kalimat Motivasi -->
+            <p class="hero-tagline"><i class="fa-regular fa-circle-check" style="color: #26d4a5;"></i> Let's Take Care of Your Teeth: Healthy Smile, Great Life!</p>
         </div>
         
-        <!-- Hero Image Slider Ter-update dengan Foto Asli -->
+        <!-- Slider Gambar -->
         <div class="hero-slider-container">
-            <div class="slide active" style="background-image: url('lanera-1.jpg');"></div>
-            <div class="slide" style="background-image: url('lanera-2.jpg');"></div>
-            <div class="slide" style="background-image: url('tp-dental-1.jpg');"></div>
-            <div class="slide" style="background-image: url('tp-dental-2.jpg');"></div>
+            <div class="slide active" style="background-image: url('lanera-interior.jpg');"></div>
+            <div class="slide" style="background-image: url('tp-dental-luar.jpg');"></div>
+            <div class="slide" style="background-image: url('lanera-luar.jpg');"></div>
+            <div class="slide" style="background-image: url('tp-dental-pintu.jpg');"></div>
         </div>
     </section>
 
-    <!-- Info Cards Section -->
-    <section class="info-section">
+    <!-- SECTION: Tentang Dokter -->
+    <section class="about-section" id="tentang-dokter">
+        <div class="about-img-box">
+            <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
+        </div>
         
-        <!-- KLINIK 1: Lanera Dental Care -->
+        <div class="about-details">
+            <h2>drg. Yuli Kartilla Panjaitan</h2>
+            <div class="subtitle">Dokter Gigi Praktisi</div>
+            <p>Beliau adalah seorang dokter gigi profesional yang berdedikasi tinggi dalam memberikan perawatan kesehatan gigi dan mulut bagi masyarakat Batam. Berfokus pada kenyamanan pasien, drg. Yuli aktif melayani perawatan gigi kosmetik maupun restoratif di Lanera Dental Care dan TP Dental.</p>
+            
+            <div class="skills-title">Keahlian & Layanan Medis:</div>
+            <div class="skills-container">
+                <div class="skill-tag">Bleaching (Pemutihan Gigi)</div>
+                <div class="skill-tag">Scaling (Pembersihan Karang)</div>
+                <div class="skill-tag">Penambalan Estetik</div>
+                <div class="skill-tag">Perawatan Saluran Akar</div>
+                <div class="skill-tag">Pencabutan Gigi</div>
+                <div class="skill-tag">Gigi Tiruan (Palsu)</div>
+                <div class="skill-tag">Pencegahan Gigi Berlubang Anak</div>
+            </div>
+            
+            <div class="history-grid">
+                <div class="history-block">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
+                    <ul class="history-list">
+                        <li class="history-item">Lulusan Pendidikan Profesi Dokter Gigi (drg.)</li>
+                        <li class="history-item">Aktif mengikuti Seminar & Workshop Kedokteran Gigi Berkelanjutan (IKORGI / PDGI)</li>
+                    </ul>
+                </div>
+                
+                <div class="history-block">
+                    <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
+                    <ul class="history-list">
+                        <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care (Batam Center)</li>
+                        <li class="history-item">Dokter Gigi Praktisi di TP Dental (Lubuk Baja, Batam)</li>
+                        <li class="history-item">Berpengalaman menangani kasus dental restoratif dan estetika gigi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Cards Section (Pilihan Klinik) -->
+    <section class="info-section" id="klinik">
+        
+        <!-- KLINIK 1: Lanera Dental Care (Dua Cabang) -->
         <div class="card">
             <div>
                 <h2>Lanera Dental Care</h2>
                 <h3><i class="fa-regular fa-clock"></i> Senin – Sabtu: 10.00 – 16.00 WIB</h3>
-                <p><strong>Alamat:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464</p>
+                <p style="margin-bottom: 8px;"><strong>Cabang KBC:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464</p>
+                <p><strong>Cabang Mitra Raya:</strong> Komplek No.3 Blok A, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
             </div>
             <div class="card-buttons">
                 <button class="card-btn" onclick="openWhatsApp('628121646224', 'Halo Lanera Dental Care, saya ingin membuat janji temu dengan drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 1</button>
                 <button class="card-btn" onclick="openWhatsApp('6281225776161', 'Halo Lanera Dental Care, saya ingin bertanya tentang jadwal drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 2</button>
-                <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=Lanera+Dental+Care+Batam', '_blank')"><i class="fa-solid fa-location-dot"></i> Google Maps</button>
+                <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=Lanera+Dental+Care+Batam', '_blank')"><i class="fa-solid fa-location-dot"></i> Maps KBC</button>
+                <button class="card-btn maps-btn" onclick="window.open('https://share.google/v10jY90e3OtJGrs5b', '_blank')"><i class="fa-solid fa-location-dot"></i> Maps Mitra Raya</button>
             </div>
         </div>
 
@@ -423,6 +749,42 @@
 
     </section>
 
+    <!-- FOOTER & KONTAK TERPADU -->
+    <footer id="kontak">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>drg. Yuli Kartilla P.</h3>
+                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam. Temukan senyum sehat dan rasa percaya diri Anda kembali melalui perawatan dental modern terbaik kami.</p>
+                
+                <div class="footer-socials-link">
+                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @laneradentalcare</a>
+                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @tpdentalbatam</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#tentang-dokter">Tentang Dokter</a></li>
+                    <li><a href="#klinik">Lokasi & Jadwal Klinik</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-maps">
+                <h4>Peta Lokasi (Batam)</h4>
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.15682855214!2d103.92429486026365!3d1.1123512248555813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98bf723e7f225%3A0x6bda6396e94998!2sBatam%2C%20Kota%20Batam%2C%20Kepulauan%20Riau!5e0!3m2!1sid!2sid!4v1700000000000!3m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
+        </div>
+    </footer>
+
     <!-- Floating Side Menu -->
     <div class="side-menu">
         <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank" title="Instagram Lanera Care"><i class="fa-brands fa-instagram"></i></a>
@@ -436,7 +798,6 @@
             window.open(url, '_blank');
         }
 
-        // Script Menu Hamburger di Mobile
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
 
@@ -444,7 +805,6 @@
             navList.classList.toggle('active');
         });
 
-        // Script Logika Slider Otomatis
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
 
@@ -454,7 +814,6 @@
             slides[currentSlide].classList.add('active');
         }
 
-        // Ganti slide otomatis setiap 4 detik
         setInterval(nextSlide, 4000);
     </script>
 </body>

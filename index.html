@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dentist WordPress Themes - Jevelin Clone</title>
+    <title>drg. Yuli Kartilla Panjaitan - Lanera Dental Care & TP Dental</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -37,7 +37,7 @@
             display: flex;
             align-items: center;
             font-weight: 700;
-            font-size: 22px;
+            font-size: 20px;
             color: #111;
         }
 
@@ -87,13 +87,18 @@
         .nav-socials i {
             cursor: pointer;
             transition: color 0.3s;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .nav-socials i:hover {
             color: #26d4a5;
         }
 
-        /* Menu Toggle untuk Mobile */
         .menu-toggle {
             display: none;
             font-size: 24px;
@@ -111,12 +116,12 @@
         }
 
         .hero-content {
-            max-width: 500px;
+            max-width: 600px;
             z-index: 2;
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 700;
             line-height: 1.2;
             color: #1d2939;
@@ -124,10 +129,10 @@
         }
 
         .hero-content p {
-            font-size: 12px;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #888;
+            color: #555;
             font-weight: 600;
             margin-bottom: 30px;
         }
@@ -156,10 +161,10 @@
             transform: translateY(-5px);
         }
 
-        /* Hero Image / Model */
+        /* Hero Image */
         .hero-image {
             position: absolute;
-            right: 10%;
+            right: 8%;
             bottom: 0;
             width: 45%;
             height: 90%;
@@ -174,15 +179,15 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 2px;
             padding: 0 8% 50px 8%;
-            margin-top: -50px;
+            margin-top: -60px;
             position: relative;
             z-index: 3;
         }
 
         .card {
             background-color: #bbf3f5;
-            padding: 40px;
-            min-height: 280px;
+            padding: 35px;
+            min-height: 340px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -192,46 +197,53 @@
         .card:nth-child(3) { background-color: #d3f9fb; }
 
         .card h2 {
-            font-size: 24px;
+            font-size: 22px;
             color: #0c4a60;
-            font-weight: 400;
+            font-weight: 700;
+            margin-bottom: 5px;
         }
 
         .card h3 {
-            font-size: 15px;
+            font-size: 13px;
             text-transform: uppercase;
-            color: #111;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            color: #222;
+            margin-top: 5px;
+            margin-bottom: 12px;
             letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .card p {
             font-size: 13px;
-            color: #555;
+            color: #444;
             line-height: 1.6;
+            margin-bottom: 8px;
         }
 
-        .card i.card-icon {
-            font-size: 28px;
-            color: #0c4a60;
-            margin-bottom: 15px;
+        .card-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
         }
 
         .card-btn {
-            align-self: flex-start;
-            margin-top: 20px;
-            padding: 12px 30px;
+            padding: 10px 18px;
             background-color: white;
             color: #333;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             border-radius: 25px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: all 0.3s;
             cursor: pointer;
             border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .card-btn:hover {
@@ -240,11 +252,23 @@
             transform: translateY(-2px);
         }
 
+        .card-btn.maps-btn {
+            background-color: transparent;
+            border: 1.5px solid #0c4a60;
+            color: #0c4a60;
+            box-shadow: none;
+        }
+
+        .card-btn.maps-btn:hover {
+            background-color: #0c4a60;
+            color: white;
+        }
+
         /* Floating Side Menu */
         .side-menu {
             position: fixed;
             right: 20px;
-            top: 30%;
+            top: 35%;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -284,7 +308,8 @@
             nav ul.active { display: flex; }
             nav ul li { margin: 10px 0; }
             .nav-socials { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
-            .hero { padding: 0 5%; background: #ebf7fd; }
+            .hero { padding: 120px 5% 50px 5%; background: #ebf7fd; min-height: auto; }
+            .hero-content h1 { font-size: 34px; }
             .hero-image { display: none; }
             .info-section { grid-template-columns: 1fr; padding: 20px 5%; margin-top: 20px; }
             .side-menu { display: none; }
@@ -295,20 +320,17 @@
 
     <header>
         <div class="logo">
-            <i class="fa-solid fa-square-plus"></i> JEVELIN
+            <i class="fa-solid fa-tooth"></i> drg. Yuli Kartilla P.
         </div>
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
             <ul id="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Departments</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Tentang Dokter</a></li>
+                <li><a href="#">Kontak</a></li>
                 <div class="nav-socials">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-brands fa-instagram" onclick="window.open('https://www.instagram.com/laneradentalcare/?hl=id', '_blank')" title="Instagram Lanera Dental Care"><span style="font-family:'Poppins',sans-serif; margin-left:4px;">Lanera</span></i>
+                    <i class="fa-brands fa-instagram" onclick="window.open('https://www.instagram.com/tpdentalbatam/', '_blank')" title="Instagram TP Dental"><span style="font-family:'Poppins',sans-serif; margin-left:4px;">TP Dental</span></i>
                 </div>
             </ul>
         </nav>
@@ -316,67 +338,69 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Dentist WordPress themes</h1>
-            <p>Create your medical website using jevelin</p>
+            <h1>Senyum Sehat & Menawan Bersama drg. Yuli</h1>
+            <p>Memberikan Perawatan Gigi Profesional Berkualitas di Lanera Dental Care & TP Dental Batam</p>
             <div class="hero-icons">
-                <div class="icon-box" onclick="showAlert('Detak Jantung')"><i class="fa-solid fa-heart-pulse"></i></div>
-                <div class="icon-box" onclick="showAlert('Peralatan Medis')"><i class="fa-solid fa-briefcase-medical"></i></div>
-                <div class="icon-box" onclick="showAlert('Stetoskop')"><i class="fa-solid fa-stethoscope"></i></div>
+                <div class="icon-box" title="Scaling Gigi"><i class="fa-solid fa-sparkles"></i></div>
+                <div class="icon-box" title="Perawatan Behel"><i class="fa-solid fa-teeth-open"></i></div>
+                <div class="icon-box" title="Kesehatan Anak"><i class="fa-solid fa-child"></i></div>
             </div>
         </div>
         <div class="hero-image"></div>
     </section>
 
     <section class="info-section">
+        
         <div class="card">
             <div>
-                <h2>1-800-600-380</h2>
-                <h3>Emergency Service</h3>
-                <p>Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus aliquet dictum. Integer dapibus ullamcorper est, ac.</p>
+                <h2>Lanera Dental Care</h2>
+                <h3><i class="fa-regular fa-clock"></i> Senin – Sabtu: 10.00 – 16.00 WIB</h3>
+                <p><strong>Alamat:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464</p>
             </div>
-            <button class="card-btn" onclick="showAlert('Emergency Call')">See More</button>
+            <div class="card-buttons">
+                <button class="card-btn" onclick="openWhatsApp('628121646224', 'Halo Lanera Dental Care, saya ingin membuat janji temu dengan drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 1</button>
+                <button class="card-btn" onclick="openWhatsApp('6281225776161', 'Halo Lanera Dental Care, saya ingin bertanya tentang jadwal drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 2</button>
+                <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=Lanera+Dental+Care+Batam', '_blank')"><i class="fa-solid fa-location-dot"></i> Google Maps</button>
+            </div>
         </div>
 
         <div class="card">
             <div>
-                <i class="fa-regular fa-calendar-check card-icon"></i>
-                <h3>Do you want to make an appointment</h3>
-                <p>Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus aliquet dictum.</p>
+                <h2>TP Dental</h2>
+                <h3><i class="fa-regular fa-clock"></i> Senin – Sabtu: 16.00 – 18.30 WIB</h3>
+                <p><strong>Alamat:</strong> Jl. Komp. Bumi Indah Blk. D No. 6, Lubuk Baja Kota, Kec. Lubuk Baja, Kota Batam, Kepulauan Riau 29444 (Belakang Bank BRI)</p>
             </div>
-            <button class="card-btn" onclick="showAppointment()">Book Now</button>
+            <div class="card-buttons">
+                <button class="card-btn" onclick="openWhatsApp('6281373091545', 'Halo TP Dental, saya ingin menjadwalkan kunjungan ke drg. Yuli sore ini.')"><i class="fa-brands fa-whatsapp"></i> Chat Admin</button>
+                <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=TP+Dental+Batam', '_blank')"><i class="fa-solid fa-location-dot"></i> Google Maps</button>
+            </div>
         </div>
 
         <div class="card">
             <div>
-                <i class="fa-regular fa-clock card-icon"></i>
-                <h3>Opening Hours</h3>
-                <p>Monday – Friday: 08.00 - 17.00<br>Saturday – Sunday: 09.00 - 15.00</p>
+                <h2>Informasi Pasien</h2>
+                <h3><i class="fa-solid fa-circle-info"></i> Catatan Kunjungan</h3>
+                <p>Untuk kenyamanan bersama, calon pasien disarankan melakukan konfirmasi atau booking terlebih dahulu melalui WhatsApp klinik masing-masing sebelum datang ke lokasi.</p>
             </div>
-            <button class="card-btn" onclick="showAlert('Hubungi Kami')">Contact Us</button>
+            <div class="card-buttons">
+                <button class="card-btn" style="background-color: #0c4a60; color: white;" onclick="alert('Pastikan Anda menghubungi nomor klinik yang aktif sesuai jam operasional yang tertera.')">Panduan Pendaftaran</button>
+            </div>
         </div>
+
     </section>
 
     <div class="side-menu">
-        <a href="#" onclick="showAlert('Menu Samping 1')"><i class="fa-solid fa-layer-group"></i></a>
-        <a href="#" onclick="showAlert('Menu Samping 2')"><i class="fa-solid fa-glasses"></i></a>
-        <a href="#" onclick="showAlert('Menu Samping 3')"><i class="fa-solid fa-basket-shopping"></i></a>
-        <a href="#" onclick="showAlert('Menu Samping 4')"><i class="fa-regular fa-circle-question"></i></a>
+        <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank" title="Instagram Lanera Care"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/tpdentalbatam/" target="_blank" title="Instagram TP Dental"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
     <script>
-        // Fungsi interaktif untuk menampilkan pesan pop-up saat tombol/ikon diklik
-        function showAlert(namaFitur) {
-            alert("Kamu mengklik fitur: " + namaFitur + ". Fitur ini bisa dikembangkan lebih lanjut!");
+        function openWhatsApp(nomor, pesan) {
+            const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
         }
 
-        function showAppointment() {
-            let nama = prompt("Masukkan nama kamu untuk membuat janji temu:");
-            if (nama) {
-                alert("Terima kasih " + nama + ", janji temu kamu berhasil dicatat!");
-            }
-        }
-
-        // Script untuk mengaktifkan responsive menu (hamburgers) saat dibuka di HP
+        // Script Menu Hamburger di Mobile
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
 

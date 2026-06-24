@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>drg. Yuli Kartilla Panjaitan - Lanera Dental Care & TP Dental</title>
+    <title>About Me - drg. Yuli Kartilla Panjaitan</title>
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -17,33 +19,32 @@
         }
 
         body {
-            background-color: #f9fbfd;
+            background-color: #ffffff;
             color: #333;
             overflow-x: hidden;
         }
 
-        /* Navigation Bar - Selalu Muncul di Atas, Berubah Style Saat Di-scroll */
+        /* Navigation Bar - HIDDEN INITIALLY, SLIDES DOWN ON SCROLL */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 8%; /* Lebih longgar saat di posisi paling atas */
+            padding: 15px 8%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             position: fixed;
             width: 100%;
             z-index: 1000;
-            top: 0;
-            left: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-            transition: all 0.3s ease-in-out;
+            top: -100px; /* Sembunyi di atas layar */
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
         }
 
-        /* EFEK PREMIUM SAAT DI-SCROLL KE BAWAH */
+        /* EFFECT WHEN SCROLLED DOWN */
         header.scrolled {
-            padding: 12px 8%; /* Menyusut halus */
-            background: #ffffff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            top: 0; /* Meluncur muncul */
+            opacity: 1;
         }
 
         .logo {
@@ -51,7 +52,7 @@
             align-items: center;
             font-weight: 700;
             font-size: 20px;
-            color: #1d2939;
+            color: #111;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -79,7 +80,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #475467;
+            color: #444;
             font-size: 14px;
             font-weight: 600;
             transition: color 0.3s;
@@ -95,331 +96,128 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
-        .hero {
+        /* SECTION: Tentang Dokter */
+        .about-section {
+            padding: 160px 8% 90px 8%;
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-img-box {
             position: relative;
-            min-height: 95vh;
-            display: flex;
-            align-items: center;
-            padding: 140px 8% 40px 8%;
-            background: radial-gradient(circle at 75% 40%, transparent 35%, rgba(235, 247, 253, 0.6) 35%);
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .hero-content {
-            max-width: 580px;
-            z-index: 2;
+        .about-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
-        .hero-content h1 {
-            font-size: 46px;
-            font-weight: 700;
-            line-height: 1.2;
+        .about-details h2 {
+            font-size: 32px;
             color: #1d2939;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .hero-content p.hero-desc {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #555;
+        .about-details .subtitle {
+            font-size: 15px;
+            color: #26d4a5;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .about-details p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .skills-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0c4a60;
+            margin-bottom: 12px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 35px;
         }
 
-        .hero-icons {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 5px;
-        }
-
-        .icon-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.3s;
-        }
-
-        .icon-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .icon-box {
-            width: 56px;
-            height: 56px;
-            background-color: #26d4a5;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 22px;
-            box-shadow: 0 8px 20px rgba(38, 212, 165, 0.3);
-            transition: background-color 0.3s;
-        }
-
-        .icon-item:hover .icon-box {
-            background-color: #1d2939;
-        }
-
-        .icon-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: #475467;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-tagline {
-            font-size: 14.5px;
+        .skill-tag {
+            background-color: #ebf7fd;
             color: #0c4a60;
-            font-weight: 600;
-            margin-top: 40px;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Bingkai Slider Premium */
-        .hero-slider-container {
-            position: absolute;
-            right: 8%;
-            top: 18%;
-            width: 42%;
-            height: 68%;
-            z-index: 1;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-        }
-
-        .slide.active {
-            opacity: 1;
-        }
-
-        /* Info Cards Section */
-        .info-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            padding: 80px 8% 40px 8%;
-            background-color: #f4f8fb;
-        }
-
-        .card {
-            background-color: #bbf3f5;
-            padding: 35px;
-            min-height: 380px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:nth-child(2) { background-color: #c7f7f9; }
-        .card:nth-child(3) { background-color: #d3f9fb; }
-
-        .card h2 {
-            font-size: 22px;
-            color: #0c4a60;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .card h3 {
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 13px;
-            text-transform: uppercase;
-            color: #222;
-            margin-top: 5px;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .card p {
-            font-size: 12.5px;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        .card-buttons {
-            display: flex;
-            gap: 6px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .card-btn {
-            padding: 9px 14px;
-            background-color: white;
-            color: #333;
-            text-decoration: none;
-            font-size: 11px;
             font-weight: 600;
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
         }
 
-        .card-btn:hover {
-            background-color: #111;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .card-btn.maps-btn {
-            background-color: transparent;
-            border: 1.5px solid #0c4a60;
-            color: #0c4a60;
-            box-shadow: none;
-        }
-
-        .card-btn.maps-btn:hover {
-            background-color: #0c4a60;
-            color: white;
-        }
-
-        /* MODAL POPUP PANDUAN PENDAFTARAN */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(17, 24, 39, 0.7);
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(4px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal.show {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            padding: 35px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 540px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            position: relative;
-            transform: translateY(-30px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal.show .modal-content {
-            transform: translateY(0);
-        }
-
-        .close-btn {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #9ca3af;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .close-btn:hover {
-            color: #1f2937;
-        }
-
-        .modal h2 {
-            font-size: 22px;
-            color: #0c4a60;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .modal-step-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .modal-step {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-        }
-
-        .step-number {
+        .skill-tag:hover {
             background-color: #26d4a5;
             color: white;
-            font-weight: 700;
-            font-size: 13px;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-            margin-top: 2px;
         }
 
-        .step-text h4 {
-            font-size: 14px;
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .history-block h3 {
+            font-size: 16px;
             color: #1d2939;
-            font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 8px;
         }
 
-        .step-text p {
-            font-size: 13px;
-            color: #667085;
+        .history-block h3 i {
+            color: #26d4a5;
+        }
+
+        .history-list {
+            list-style: none;
+        }
+
+        .history-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 13.5px;
+            color: #555;
             line-height: 1.5;
         }
 
-        .step-text blockquote {
-            background-color: #f4f8fb;
-            border-left: 3px solid #26d4a5;
-            padding: 8px 12px;
-            margin-top: 8px;
-            font-size: 12px;
-            color: #333;
-            border-radius: 0 4px 4px 0;
-            font-style: normal;
+        .history-item::before {
+            content: "•";
+            color: #26d4a5;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-weight: bold;
         }
 
-        /* SECTION: Footer & Kontak Terpadu */
+        /* SECTION: Footer */
         footer {
             background-color: #111827;
             color: #bcbfcd;
@@ -520,7 +318,7 @@
 
         /* Responsive Breakpoints */
         @media (max-width: 992px) {
-            header { padding: 16px 5%; background: white !important; position: fixed; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+            header { padding: 20px 5%; background: white !important; top: 0 !important; opacity: 1 !important; position: fixed; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
             .menu-toggle { display: block; color: #111; }
             nav ul {
                 display: none;
@@ -536,30 +334,126 @@
             nav ul.active { display: flex; }
             nav ul li { margin: 10px 0; }
             
-            .hero { 
-                padding: 120px 5% 40px 5%; 
-                background: #ebf7fd; 
-                min-height: auto; 
-                display: flex;
-                flex-direction: column;
-                gap: 35px;
-            }
-            .hero-content { max-width: 100%; }
-            .hero-content h1 { font-size: 36px; }
-            .hero-icons { gap: 20px; justify-content: flex-start; }
-            
-            .hero-slider-container { 
-                display: block;
-                position: relative;
-                right: auto;
-                top: auto;
-                width: 100%;
-                height: 260px;
-                margin-top: 10px;
-                border-radius: 12px;
-            }
-            
-            .info-section { grid-template-columns: 1fr; padding: 40px 5%; }
-            .card { min-height: auto; padding: 25px; }
+            .about-section { grid-template-columns: 1fr; gap: 40px; padding: 130px 5% 40px 5%; }
+            .history-grid { grid-template-columns: 1fr; gap: 25px; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
-            .map-responsive { padding-bottom:
+            .map-responsive { padding-bottom: 60%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigasi -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
+        </div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
+            <ul id="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="index.html#locations">Locations & Schedules</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION: Tentang Dokter -->
+    <section class="about-section">
+        <div class="about-img-box">
+            <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
+        </div>
+        
+        <div class="about-details">
+            <h2>drg. Yuli Kartilla Panjaitan</h2>
+            <div class="subtitle">Dokter Gigi Praktisi</div>
+            <p>Saya adalah seorang dokter gigi profesional yang berdedikasi tinggi dalam memberikan perawatan kesehatan gigi dan mulut bagi masyarakat Batam. Berfokus pada kenyamanan pasien, saya aktif melayani perawatan gigi kosmetik maupun restoratif di Lanera Dental Care dan TP Dental.</p>
+            
+            <div class="skills-title">Keahlian & Layanan Medis:</div>
+            <div class="skills-container">
+                <div class="skill-tag">Bleaching (Pemutihan Gigi)</div>
+                <div class="skill-tag">Scaling (Pembersihan Karang)</div>
+                <div class="skill-tag">Penambalan Estetik</div>
+                <div class="skill-tag">Perawatan Saluran Akar</div>
+                <div class="skill-tag">Pencabutan Gigi</div>
+                <div class="skill-tag">Gigi Tiruan (Palsu)</div>
+                <div class="skill-tag">Pencegahan Gigi Berlubang Anak</div>
+            </div>
+            
+            <div class="history-grid">
+                <div class="history-block">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
+                    <ul class="history-list">
+                        <li class="history-item">Lulusan Pendidikan Profesi Dokter Gigi (drg.)</li>
+                        <li class="history-item">Aktif mengikuti Seminar & Workshop Kedokteran Gigi Berkelanjutan (IKORGI / PDGI)</li>
+                    </ul>
+                </div>
+                
+                <div class="history-block">
+                    <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
+                    <ul class="history-list">
+                        <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care (Batam Center)</li>
+                        <li class="history-item">Dokter Gigi Praktisi di TP Dental (Lubuk Baja, Batam)</li>
+                        <li class="history-item">Berpengalaman menangani kasus dental restoratif dan estetika gigi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>drg. Yuli Kartilla P.</h3>
+                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam. Temukan senyum sehat dan rasa percaya diri Anda kembali melalui perawatan dental modern terbaik kami.</p>
+                <div class="footer-socials-link">
+                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @laneradentalcare</a>
+                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @tpdentalbatam</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="index.html#locations">Locations & Schedules</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-maps">
+                <h4>Peta Lokasi (Batam)</h4>
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.15682855214!2d103.92429486026365!3d1.1123512248555813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98bf723e7f225%3A0x6bda6396e94998!2sBatam%2C%20Kota%20Batam%2C%20Kepulauan%20Riau!5e0!3m2!1sid!2sid!4v1700000000000!3m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
+        </div>
+    </footer>
+
+    <script>
+        // STICKY NAVBAR REVEAL ON SCROLL LOGIC
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

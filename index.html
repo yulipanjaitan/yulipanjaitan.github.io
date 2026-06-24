@@ -173,7 +173,7 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
-        /* SECTION: Slider Gambar Klinik Terpadu di Atas Layanan */
+        /* SECTION: Slider Gambar Klinik */
         .slider-section {
             padding: 40px 8% 10px 8%;
             background: #ffffff;
@@ -272,7 +272,7 @@
             line-height: 1.6;
         }
 
-        /* SECTION: Locations & Schedules (Hubungi Kami Terintegrasi) */
+        /* SECTION: Locations & Schedules */
         .locations-section {
             padding: 90px 8%;
             background: #f9fafb;
@@ -494,8 +494,8 @@
 
         .footer-container {
             display: grid;
-            grid-template-columns: 1.2fr 1fr 1.5fr;
-            gap: 40px;
+            grid-template-columns: 1.5fr 1fr; /* Diubah menjadi 2 kolom saja */
+            gap: 50px;
             margin-bottom: 40px;
         }
 
@@ -527,7 +527,7 @@
             color: #26d4a5;
         }
 
-        .footer-links h4, .footer-maps h4 {
+        .footer-links h4 {
             color: white;
             font-size: 15px;
             font-weight: 700;
@@ -553,23 +553,6 @@
 
         .footer-links ul li a:hover {
             color: #26d4a5;
-        }
-
-        .map-responsive {
-            overflow: hidden;
-            padding-bottom: 45%;
-            position: relative;
-            height: 0;
-            border-radius: 8px;
-        }
-
-        .map-responsive iframe {
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            border: 0;
         }
 
         .footer-bottom {
@@ -607,7 +590,6 @@
             .hero-slider-container { height: 260px; }
             .locations-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
-            .map-responsive { padding-bottom: 60%; }
         }
     </style>
 </head>
@@ -623,7 +605,8 @@
             <ul id="nav-list">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="#locations">Hubungi Kami</a></li>
+                <li><a href="#locations">Locations & Schedules</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -635,7 +618,6 @@
             <p>Selamat datang di platform konsultasi resmi drg. Yuli Kartilla Panjaitan. Kami berkomitmen memberikan pelayanan dental modern terbaik dengan mengutamakan kenyamanan, keamanan, dan hasil yang estetis untuk kesehatan gigi dan mulut Anda.</p>
             
             <div class="hero-buttons">
-                <!-- REVISI: Kembali ke Fungsi Panduan Pendaftaran -->
                 <button class="btn-primary" onclick="toggleModal(true)">
                     <i class="fa-solid fa-book-medical" style="margin-right: 6px;"></i> Panduan Pendaftaran
                 </button>
@@ -649,7 +631,7 @@
         </div>
     </section>
 
-    <!-- SECTION: Bingkai Slider Klinik (Tepat di Atas Layanan) -->
+    <!-- SECTION: Bingkai Slider Klinik -->
     <section class="slider-section">
         <div class="hero-slider-container">
             <div class="slide active" style="background-image: url('lanera-interior.jpg');"></div>
@@ -687,9 +669,9 @@
         </div>
     </section>
 
-    <!-- SECTION: Hubungi Kami (Berisi Alamat, Admin WA, dan Google Maps Semula) -->
+    <!-- SECTION: Locations & Schedules -->
     <section class="locations-section" id="locations">
-        <h2 class="section-title">Hubungi Kami</h2>
+        <h2 class="section-title">Locations & Schedules</h2>
         <div class="section-subtitle">Practice Locations & Contact Info</div>
         <div class="locations-grid">
             
@@ -737,7 +719,10 @@
         </div>
     </section>
 
-    <!-- MODAL POPUP BOX PANDUAN PENDAFTARAN -->
+    <!-- SECTION: Contact Us Link Anchor -->
+    <section id="contact" style="padding: 10px 0;"></section>
+
+    <!-- MODAL POPUP PANDUAN PENDAFTARAN -->
     <div id="panduanModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="toggleModal(false)">&times;</span>
@@ -752,7 +737,6 @@
                         <p>Tentukan klinik pilihan Anda (Lanera KBC, Lanera Mitra Raya, atau TP Dental) berdasarkan lokasi terdekat serta jam operasional masuk drg. Yuli.</p>
                     </div>
                 </div>
-                
                 <div class="modal-step">
                     <div class="step-number">2</div>
                     <div class="step-text">
@@ -760,7 +744,6 @@
                         <p>Klik tombol <strong>Admin</strong> atau <strong>Chat Admin</strong> pada kartu klinik yang dipilih untuk langsung dialihkan ke ruang obrolan WhatsApp.</p>
                     </div>
                 </div>
-
                 <div class="modal-step">
                     <div class="step-number">3</div>
                     <div class="step-text">
@@ -774,7 +757,6 @@
                         </blockquote>
                     </div>
                 </div>
-
                 <div class="modal-step">
                     <div class="step-number">4</div>
                     <div class="step-text">
@@ -786,7 +768,7 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (PETA DIHAPUS) -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -803,14 +785,9 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
+                    <li><a href="#locations">Locations & Schedules</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
-            </div>
-
-            <div class="footer-maps">
-                <h4>Peta Lokasi (Batam)</h4>
-                <div class="map-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.15682855214!2d103.92429486026365!3d1.1123512248555813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98bf723e7f225%3A0x6bda6396e94998!2sBatam%2C%20Kota%20Batam%2C%20Kepulauan%20Riau!5e0!3m2!1sid!2sid!4v1700000000000!3m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
-                </div>
             </div>
         </div>
 
@@ -822,7 +799,6 @@
 
     <!-- JavaScript Interaksi -->
     <script>
-        // STICKY NAVBAR LOGIC
         const header = document.querySelector('header');
         function checkScroll() {
             const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
@@ -840,7 +816,6 @@
             window.open(url, '_blank');
         }
 
-        // POPUP TOGGLE FUNCTION
         function toggleModal(show) {
             const modal = document.getElementById('panduanModal');
             if (show) {
@@ -865,17 +840,14 @@
             navList.classList.toggle('active');
         });
 
-        // AMAN AUTOMATIC IMAGE SLIDER
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
-
         function nextSlide() {
             if (slides.length === 0) return;
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-
         if (slides.length > 0) {
             setInterval(nextSlide, 4000);
         }

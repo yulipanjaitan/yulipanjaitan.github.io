@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,16 +24,27 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar - HIDDEN INITIALLY, SLIDES DOWN ON SCROLL */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 8%;
-            background: transparent;
-            position: absolute;
+            padding: 15px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
             width: 100%;
-            z-index: 10;
+            z-index: 1000;
+            top: -100px; /* Sembunyi di atas layar */
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+
+        /* EFFECT WHEN SCROLLED DOWN */
+        header.scrolled {
+            top: 0; /* Meluncur muncul */
+            opacity: 1;
         }
 
         .logo {
@@ -69,38 +80,13 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #555;
+            color: #444;
             font-size: 14px;
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: #26d4a5;
-        }
-
-        .nav-socials {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-left: 20px;
-            border-left: 1px solid #ddd;
-            padding-left: 20px;
-            color: #888;
-        }
-
-        .nav-socials i {
-            cursor: pointer;
-            transition: color 0.3s;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .nav-socials i:hover {
+        nav ul li a:hover, nav ul li a.active {
             color: #26d4a5;
         }
 
@@ -113,10 +99,10 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 90vh;
+            min-height: 95vh;
             display: flex;
             align-items: center;
-            padding: 0 8%;
+            padding: 120px 8% 40px 8%;
             background: radial-gradient(circle at 75% 40%, transparent 35%, rgba(235, 247, 253, 0.6) 35%);
             overflow: hidden;
         }
@@ -145,7 +131,7 @@
 
         .hero-icons {
             display: flex;
-            gap: 25px;
+            gap: 30px;
             margin-bottom: 5px;
         }
 
@@ -166,15 +152,15 @@
         }
 
         .icon-box {
-            width: 52px;
-            height: 52px;
+            width: 56px;
+            height: 56px;
             background-color: #26d4a5;
             color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 20px;
+            font-size: 22px;
             box-shadow: 0 8px 20px rgba(38, 212, 165, 0.3);
             transition: background-color 0.3s;
         }
@@ -195,7 +181,7 @@
             font-size: 14.5px;
             color: #0c4a60;
             font-weight: 600;
-            margin-top: 30px;
+            margin-top: 40px;
             line-height: 1.5;
             display: flex;
             align-items: center;
@@ -206,7 +192,7 @@
         .hero-slider-container {
             position: absolute;
             right: 8%;
-            top: 15%;
+            top: 18%;
             width: 42%;
             height: 68%;
             z-index: 1;
@@ -533,35 +519,9 @@
             font-size: 12px;
         }
 
-        /* Floating Side Menu */
-        .side-menu {
-            position: fixed;
-            right: 20px;
-            top: 35%;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            display: flex;
-            flex-direction: column;
-            padding: 10px 0;
-            z-index: 100;
-        }
-
-        .side-menu a {
-            padding: 12px 18px;
-            color: #888;
-            font-size: 18px;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: flex;
-            justify-content: center;
-        }
-
-        .side-menu a:hover { color: #26d4a5; }
-
         /* Responsive Breakpoints */
         @media (max-width: 992px) {
-            header { padding: 20px 5%; }
+            header { padding: 20px 5%; background: white !important; top: 0 !important; opacity: 1 !important; position: fixed; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
             .menu-toggle { display: block; color: #111; }
             nav ul {
                 display: none;
@@ -576,7 +536,6 @@
             }
             nav ul.active { display: flex; }
             nav ul li { margin: 10px 0; }
-            .nav-socials { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
             
             .hero { 
                 padding: 130px 5% 40px 5%; 
@@ -588,7 +547,7 @@
             }
             .hero-content { max-width: 100%; }
             .hero-content h1 { font-size: 36px; }
-            .hero-icons { gap: 15px; justify-content: flex-start; }
+            .hero-icons { gap: 20px; justify-content: flex-start; }
             
             .hero-slider-container { 
                 display: block;
@@ -605,13 +564,12 @@
             .card { min-height: auto; padding: 25px; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
             .map-responsive { padding-bottom: 60%; }
-            .side-menu { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigasi -->
+    <!-- Header / Navigasi (Otomatis muncul pas di-scroll kebawah) -->
     <header>
         <div class="logo">
             <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
@@ -619,14 +577,10 @@
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
             <ul id="nav-list">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="about.html">Tentang Dokter</a></li>
-                <li><a href="#klinik">Lokasi & Jadwal</a></li>
-                <li><a href="#kontak">Hubungi Kami</a></li>
-                <div class="nav-socials">
-                    <i class="fa-brands fa-instagram" onclick="window.open('https://www.instagram.com/laneradentalcare/?hl=id', '_blank')" title="Instagram Lanera Dental Care"><span style="font-family:'Poppins',sans-serif; margin-left:4px;">Lanera</span></i>
-                    <i class="fa-brands fa-instagram" onclick="window.open('https://www.instagram.com/tpdentalbatam/', '_blank')" title="Instagram TP Dental"><span style="font-family:'Poppins',sans-serif; margin-left:4px;">TP Dental</span></i>
-                </div>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="#locations">Locations & Schedules</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -637,18 +591,16 @@
             <h1>Healthy teeth, happy life</h1>
             <p class="hero-desc">Memberikan Perawatan Gigi Profesional Berkualitas di Lanera Dental Care & TP Dental Batam</p>
             
+            <!-- REVISI IKON: PANDUAN DAN CV -->
             <div class="hero-icons">
-                <a href="#klinik" class="icon-item" title="Klik untuk cek jadwal scaling">
-                    <div class="icon-box"><i class="fa-solid fa-sparkles"></i></div>
-                    <span class="icon-label">Scaling Gigi</span>
-                </a>
-                <a href="#klinik" class="icon-item" title="Klik untuk cek jadwal ortodonti">
-                    <div class="icon-box"><i class="fa-solid fa-teeth-open"></i></div>
-                    <span class="icon-label">Behel Gigi</span>
-                </a>
-                <a href="#klinik" class="icon-item" title="Klik untuk cek jadwal perawatan anak">
-                    <div class="icon-box"><i class="fa-solid fa-child"></i></div>
-                    <span class="icon-label">Gigi Anak</span>
+                <div class="icon-item" onclick="toggleModal(true)" title="Klik untuk membuka Panduan Pendaftaran">
+                    <div class="icon-box"><i class="fa-solid fa-book-medical"></i></div>
+                    <span class="icon-label">Registration Guide</span>
+                </div>
+                <!-- Ganti 'cv.pdf' dengan nama file CV asli Anda saat di-upload nanti -->
+                <a href="cv.pdf" target="_blank" class="icon-item" title="Klik untuk mengunduh Curriculum Vitae">
+                    <div class="icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                    <span class="icon-label">Curriculum Vitae</span>
                 </a>
             </div>
 
@@ -664,7 +616,7 @@
     </section>
 
     <!-- Info Cards Section -->
-    <section class="info-section" id="klinik">
+    <section class="info-section" id="locations">
         
         <!-- KLINIK 1 -->
         <div class="card">
@@ -759,7 +711,7 @@
     </div>
 
     <!-- FOOTER -->
-    <footer id="kontak">
+    <footer id="contact">
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>drg. Yuli Kartilla P.</h3>
@@ -771,11 +723,11 @@
             </div>
 
             <div class="footer-links">
-                <h4>Navigasi</h4>
+                <h4>Navigation</h4>
                 <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Dokter</a></li>
-                    <li><a href="#klinik">Lokasi & Jadwal Klinik</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="#locations">Locations & Schedules</a></li>
                 </ul>
             </div>
 
@@ -793,14 +745,18 @@
         </div>
     </footer>
 
-    <!-- Floating Side Menu -->
-    <div class="side-menu">
-        <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank" title="Instagram Lanera Care"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.instagram.com/tpdentalbatam/" target="_blank" title="Instagram TP Dental"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-
     <!-- JavaScript Interaksi -->
     <script>
+        // STICKY NAVBAR REVEAL ON SCROLL LOGIC
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
         function openWhatsApp(nomor, pesan) {
             const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
             window.open(url, '_blank');

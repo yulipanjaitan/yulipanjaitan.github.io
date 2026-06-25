@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - drg. Yuli Kartilla Panjaitan</title>
-    <!-- FAVICON: Ikon Gigi Hijau Mint Senada Logo Header -->
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3467/3467831.png">
+    <!-- FAVICON: Ikon Gigi Hijau Mint Bersih & Transparan -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2115/2115291.png">
     <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -100,7 +100,7 @@
             cursor: pointer;
         }
 
-        /* SECTION: Tentang Dokter */
+        /* SECTION: Tentang Dokter INTERAKTIF */
         .about-section {
             padding: 160px 8% 90px 8%;
             background-color: #ffffff;
@@ -114,9 +114,11 @@
             position: relative;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 120px;
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
         }
 
         .about-img-box img {
@@ -124,6 +126,18 @@
             height: auto;
             display: block;
             object-fit: cover;
+            filter: brightness(0.98);
+            transition: filter 0.4s ease, transform 0.5s ease;
+        }
+
+        /* Efek interaktif mengangkat foto & memperjelas cahaya saat di-hover */
+        .about-img-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(38, 212, 165, 0.12); /* Bayangan memancarkan aura mint soft */
+        }
+
+        .about-img-box:hover img {
+            filter: brightness(1.02);
         }
 
         .profile-highlight-card {

@@ -38,12 +38,13 @@
             }
         }
 
-        /* Navigation Bar */
+        /* REVISI: Navigation Bar Rapat Ditengah & Simetris */
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Membuat isi konten berkumpul di tengah */
             align-items: center;
-            padding: 22px 8%;
+            gap: 50px; /* Jarak antara Logo dan Menu Navigasi */
+            padding: 22px 5%;
             background: #f8fafc;
             position: fixed;
             width: 100%;
@@ -56,27 +57,29 @@
         }
 
         header.scrolled {
-            padding: 12px 8%;
+            padding: 14px 5%;
             background: #f1f5f9;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            gap: 40px; /* Merapat sedikit saat di-scroll agar tampak dinamis */
         }
 
         .logo {
             display: flex;
             align-items: center;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 19px;
             color: #1d2939;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-decoration: none;
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .logo i {
             color: #26d4a5;
             margin-right: 10px;
-            font-size: 24px;
+            font-size: 22px;
         }
 
         nav {
@@ -91,7 +94,7 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 16px;
         }
 
         nav ul li a {
@@ -100,6 +103,7 @@
             font-size: 14px;
             font-weight: 600;
             transition: color 0.3s;
+            white-space: nowrap;
         }
 
         nav ul li a:hover, nav ul li a.active {
@@ -126,7 +130,6 @@
             max-width: 750px;
         }
 
-        /* Efek Masuk & Hover Interaktif pada Judul */
         .hero-text h1 {
             font-size: 42px;
             color: #1d2939;
@@ -148,13 +151,11 @@
             transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
-        /* Judul Span Bersinar saat di-hover */
         .hero-text h1:hover span {
             color: #1fc094;
             text-shadow: 0 0 12px rgba(38, 212, 165, 0.3);
         }
 
-        /* Efek Masuk & Hover Interaktif pada Deskripsi */
         .hero-text p {
             font-size: 15px;
             color: #475467;
@@ -170,7 +171,6 @@
             transform: translateY(-2px);
         }
 
-        /* Efek Masuk pada Container Tombol */
         .hero-buttons {
             display: flex; 
             gap: 15px; 
@@ -211,7 +211,7 @@
             box-shadow: 0 8px 25px rgba(29, 41, 57, 0.35);
         }
 
-        /* SECTION: Slider Gambar Klinik Interaktif */
+        /* SECTION: Slider Gambar Klinik Teroptimasi */
         .slider-section {
             padding: 40px 8% 20px 8%;
             background: #ffffff;
@@ -660,8 +660,15 @@
             font-size: 12px;
         }
 
+        /* Responsive Breakpoint Mobile Layout Header */
         @media (max-width: 992px) {
-            header { padding: 16px 5%; background: #f8fafc !important; position: fixed; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+            header { 
+                justify-content: space-between; /* Kembali ke kiri-kanan pada mobile demi fungsionalitas */
+                padding: 16px 5%; 
+                background: #f8fafc !important; 
+                position: fixed; 
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            }
             .menu-toggle { display: block; color: #111; }
             nav ul {
                 display: none;
@@ -688,7 +695,7 @@
 </head>
 <body>
 
-    <!-- Header / Navigasi -->
+    <!-- Header / Navigasi (Centered Simetris) -->
     <header>
         <a href="about.html" class="logo">
             <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
@@ -704,7 +711,7 @@
         </nav>
     </header>
 
-    <!-- SECTION: Hero Banner (Interaktif Teks + Tombol) -->
+    <!-- SECTION: Hero Banner -->
     <section class="hero-section">
         <div class="hero-text">
             <h1>Healthy Teeth, <span>Beautiful Smile</span></h1>
@@ -850,7 +857,7 @@
                     <div class="step-text">
                         <h4>Kirimkan Format Booking</h4>
                         <p>Kirim pesan otomatis yang tersedia atau gunakan pola teks mandiri berikut agar proses input jadwal berjalan lebih cepat:</p>
-                        blockquote>
+                        <blockquote>
                             • <strong>Nama Pasien:</strong> <br>
                             • <strong>Klinik Tujuan:</strong> (KBC / Mitra Raya / TP Dental)<br>
                             • <strong>Hari & Tanggal Kunjungan:</strong> <br>

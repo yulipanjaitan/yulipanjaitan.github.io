@@ -47,10 +47,8 @@
         nav ul li a.active { color: #26d4a5; }
         .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
 
-        .about-section { padding: 160px 8% 90px 8%; background-color: #ffffff; display: grid; grid-template-columns: 1fr; gap: 50px; align-items: start; }
-        
-        /* Layout Atas: Profil Utama */
-        .profile-upper-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 50px; align-items: start; }
+        /* STRUKTUR SEMULA: Grid 2 Kolom Kiri & Kanan Berdampingan di Desktop */
+        .about-section { padding: 160px 5% 90px 5%; background-color: #ffffff; display: grid; grid-template-columns: 1fr 2.2fr; gap: 40px; align-items: start; }
         .about-img-box { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); position: sticky; top: 120px; transition: transform 0.4s ease; }
         .about-img-box img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.5s ease; }
         .about-img-box:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(38, 212, 165, 0.15); }
@@ -64,22 +62,22 @@
         .btn-portfolio { display: inline-flex; align-items: center; gap: 8px; background-color: #1d2939; color: white; padding: 10px 22px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 13px; box-shadow: 0 4px 12px rgba(29, 41, 57, 0.15); transition: all 0.3s; }
         .btn-portfolio:hover { background-color: #111827; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(29, 41, 57, 0.3); }
 
-        /* REVISI LAYOUT: Grid Simetris 4 Kolom (4 Atas & 4 Bawah) */
-        .skills-title-main { font-size: 18px; color: #1d2939; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; margin-top: 20px; }
+        .skills-title-main { font-size: 18px; color: #1d2939; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; margin-top: 10px; }
         .skills-title-main::after { content: ""; flex-grow: 1; height: 2px; background-color: #f0f4f8; }
         
+        /* UKURAN DISESUAIKAN: Tetap Presisi 4 Kolom di Samping Foto Dokter */
         .skills-grid-layout { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
-            gap: 20px; 
+            gap: 15px; 
             margin-bottom: 45px; 
         }
         
-        .skill-card-box { background: #ffffff; padding: 22px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f2f4f7; transition: all 0.3s; display: flex; flex-direction: column; justify-content: flex-start; }
+        .skill-card-box { background: #ffffff; padding: 20px 15px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f2f4f7; transition: all 0.3s; display: flex; flex-direction: column; justify-content: flex-start; }
         .skill-card-box:hover { transform: translateY(-3px); border-color: #26d4a5; box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
-        .skill-card-icon { font-size: 24px; color: #26d4a5; margin-bottom: 12px; display: inline-block; }
-        .skill-card-box h4 { font-size: 14px; color: #1d2939; font-weight: 700; margin-bottom: 6px; }
-        .skill-card-box p { font-size: 12px; color: #667085; line-height: 1.5; }
+        .skill-card-icon { font-size: 22px; color: #26d4a5; margin-bottom: 10px; display: inline-block; }
+        .skill-card-box h4 { font-size: 13.5px; color: #1d2939; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+        .skill-card-box p { font-size: 11.5px; color: #667085; line-height: 1.5; }
 
         .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .history-block { background: #ffffff; padding: 25px; border-radius: 14px; border: 1px solid #f2f4f7; transition: all 0.4s ease; }
@@ -104,8 +102,9 @@
         .footer-bottom { border-top: 1px solid #1f2937; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 12px; }
         .footer-bottom .privacy-note { color: #888c9b; font-size: 11px; display: flex; align-items: center; gap: 6px; }
 
-        @media (max-width: 1200px) {
-            .skills-grid-layout { grid-template-columns: repeat(2, 1fr); } /* Menyesuaikan tablet */
+        /* Media Queries Responsif */
+        @media (max-width: 1400px) {
+            .skills-grid-layout { grid-template-columns: repeat(2, 1fr); } /* Menjadi 2x4 di layar medium desktop */
         }
 
         @media (max-width: 992px) {
@@ -113,9 +112,9 @@
             .menu-toggle { display: block; color: #111; }
             nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #f8fafc; padding: 20px; }
             nav ul.active { display: flex; }
-            .profile-upper-layout { grid-template-columns: 1fr; gap: 40px; }
+            .about-section { grid-template-columns: 1fr; padding: 130px 5% 40px 5%; }
             .about-img-box { position: relative; top: 0; }
-            .skills-grid-layout { grid-template-columns: 1fr; } /* Menyesuaikan layar HP */
+            .skills-grid-layout { grid-template-columns: 1fr; } /* Menjadi 1 kolom di HP */
             .history-grid { grid-template-columns: 1fr; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
             .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
@@ -145,106 +144,102 @@
     <!-- SECTION: Tentang Dokter -->
     <section class="about-section">
         
-        <!-- Blok Atas: Foto & Deskripsi Ringkas -->
-        <div class="profile-upper-layout">
-            <div class="about-img-box">
-                <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
+        <!-- Kolom Kiri: Foto Dokter (Sticky di Desktop) -->
+        <div class="about-img-box">
+            <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
+        </div>
+        
+        <!-- Kolom Kanan: Seluruh Isi Profil & Grid Keahlian -->
+        <div class="about-details">
+            <div class="profile-highlight-card">
+                <h2>drg. Yuli Kartilla Panjaitan</h2>
+                <div class="subtitle">Dokter Gigi Praktisi</div>
+                
+                <a href="https://www.instagram.com/drg.yulipanjaitan/" target="_blank" class="btn-portfolio">
+                    <i class="fa-solid fa-briefcase"></i> Portofolio
+                </a>
+                
+                <p class="desc" style="margin-top: 15px; line-height: 1.7; font-size: 14px; color: #344054;">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
             </div>
             
-            <div class="about-details">
-                <div class="profile-highlight-card">
-                    <h2>drg. Yuli Kartilla Panjaitan</h2>
-                    <div class="subtitle">Dokter Gigi Praktisi</div>
-                    
-                    <a href="https://www.instagram.com/drg.yulipanjaitan/" target="_blank" class="btn-portfolio">
-                        <i class="fa-solid fa-briefcase"></i> Portofolio
-                    </a>
-                    
-                    <p class="desc" style="margin-top: 15px; line-height: 1.7; font-size: 14px; color: #344054;">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
-                </div>
-
-                <!-- Riwayat Akademis & Praktik -->
-                <div class="history-grid">
-                    <div class="history-block">
-                        <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
-                        <ul class="history-list">
-                            <li class="history-item">Sarjana Kedokteran Gigi (2018) - Universitas Sumatera Utara</li>
-                            <li class="history-item">Profesi Dokter Gigi (2021) - Universitas Sumatera Utara</li>
-                        </ul>
-                    </div>
-                    <div class="history-block">
-                        <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
-                        <ul class="history-list">
-                            <li class="history-item">Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)</li>
-                            <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)</li>
-                            <li class="history-item">Memiliki pengalaman praktis (lebih dari 5 tahun experience) dalam bidang Dentistry hingga sekarang</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Blok Bawah: Keahlian & Layanan Medis (Simetris 4 Atas & 4 Bawah) -->
-        <div>
+            <!-- Grid Keahlian & Layanan Medis (Pas 4 Atas & 4 Bawah) -->
             <div class="skills-title-main">Keahlian & Layanan Medis</div>
             <div class="skills-grid-layout">
                 
-                <!-- BARIS ATAS - KARTU 1: Pemasangan behel/ Ortodonti -->
+                <!-- BARIS ATAS - KARTU 1 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-teeth skill-card-icon"></i>
                     <h4>Pemasangan behel/ Ortodonti</h4>
                     <p>Memperbaiki susunan gigi yg tidak rapi dan memperbaiki posisi rahang</p>
                 </div>
                 
-                <!-- BARIS ATAS - KARTU 2: Dental Bleaching -->
+                <!-- BARIS ATAS - KARTU 2 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-wand-magic-sparkles skill-card-icon"></i>
                     <h4>Dental Bleaching</h4>
                     <p>Prosedur pemutihan gigi untuk membuat permukaan gigi tampak lebih putih natural</p>
                 </div>
                 
-                <!-- BARIS ATAS - KARTU 3: Scaling -->
+                <!-- BARIS ATAS - KARTU 3 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-shield-halved skill-card-icon"></i>
                     <h4>Scaling</h4>
                     <p>Prosedur pembersihan karang gigi untuk menghindari risiko peradangan gusi dan bau mulut</p>
                 </div>
                 
-                <!-- BARIS ATAS - KARTU 4: Restorasi gigi -->
+                <!-- BARIS ATAS - KARTU 4 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-tooth skill-card-icon"></i>
                     <h4>Restorasi gigi</h4>
                     <p>Prosedur penambalan pada gigi karies/ berlubang dengan menggunakan bahan resin komposit sewarna gigi</p>
                 </div>
                 
-                <!-- BARIS BAWAH - KARTU 5: Perawatan Saluran Akar -->
+                <!-- BARIS BAWAH - KARTU 5 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-heart-pulse skill-card-icon"></i>
                     <h4>Perawatan Saluran Akar</h4>
                     <p>Prosedur perawatan gigi yang bertujuan untuk merawat gigi yang sudah terinfeksi dan menghilangkan abses gigi</p>
                 </div>
                 
-                <!-- BARIS BAWAH - KARTU 6: Pencabutan Gigi -->
+                <!-- BARIS BAWAH - KARTU 6 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-scissors skill-card-icon"></i>
                     <h4>Pencabutan Gigi</h4>
                     <p>Prosedur medis untuk mengangkat gigi yang rusak, terinfeksi, atau tidak dapat dipertahankan lagi dengan tujuan menghentikan rasa sakit dan mencegah penyebaran infeksi lebih lanjut</p>
                 </div>
                 
-                <!-- BARIS BAWAH - KARTU 7: Gigi Tiruan -->
+                <!-- BARIS BAWAH - KARTU 7 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-cubes skill-card-icon"></i>
                     <h4>Gigi Tiruan (Palsu)</h4>
                     <p>Pembuatan protesa gigi lepasan maupun cekat untuk menggantikan fungsi fonetik dan estetika gigi yang tanggal.</p>
                 </div>
                 
-                <!-- BARIS BAWAH - KARTU 8: Dental Anak -->
+                <!-- BARIS BAWAH - KARTU 8 -->
                 <div class="skill-card-box">
                     <i class="fa-solid fa-child skill-card-icon"></i>
                     <h4>Dental Anak (Pedodonti)</h4>
                     <p>Pencegahan dini gigi berlubang pada anak-anak melalui pendekatan perawatan yang ramah, nyaman, dan edukatif.</p>
                 </div>
-
+            </div>
+            
+            <!-- Riwayat Akademis & Praktik -->
+            <div class="history-grid">
+                <div class="history-block">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
+                    <ul class="history-list">
+                        <li class="history-item">Sarjana Kedokteran Gigi (2018) - Universitas Sumatera Utara</li>
+                        <li class="history-item">Profesi Dokter Gigi (2021) - Universitas Sumatera Utara</li>
+                    </ul>
+                </div>
+                <div class="history-block">
+                    <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
+                    <ul class="history-list">
+                        <li class="history-item">Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)</li>
+                        <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)</li>
+                        <li class="history-item">Memiliki pengalaman praktis (lebih dari 5 tahun experience) dalam bidang Dentistry hingga sekarang</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

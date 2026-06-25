@@ -55,6 +55,8 @@
             color: #1d2939;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .logo i {
@@ -123,7 +125,7 @@
         .about-details h2 {
             font-size: 32px;
             color: #1d2939;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 700;
         }
 
@@ -133,7 +135,30 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Tombol Portofolio Premium */
+        .btn-portfolio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #26d4a5;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            box-shadow: 0 4px 12px rgba(38, 212, 165, 0.25);
+            transition: all 0.3s;
+            margin-bottom: 25px;
+        }
+
+        .btn-portfolio:hover {
+            background-color: #1fc094;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(38, 212, 165, 0.35);
         }
 
         .about-details p {
@@ -227,7 +252,7 @@
 
         .footer-container {
             display: grid;
-            grid-template-columns: 1.5fr 1fr; /* Diubah menjadi 2 kolom saja */
+            grid-template-columns: 1.5fr 1fr;
             gap: 50px;
             margin-bottom: 40px;
         }
@@ -288,17 +313,6 @@
             color: #26d4a5;
         }
 
-        .footer-bottom {
-            border-top: 1px solid #1f2937;
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 12px;
-        }
-
         @media (max-width: 992px) {
             header { padding: 16px 5%; background: white !important; position: fixed; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
             .menu-toggle { display: block; color: #111; }
@@ -323,11 +337,11 @@
 </head>
 <body>
 
-    <!-- Header / Navigasi -->
+    <!-- Header / Navigasi (Logo diarahkan ke about.html) -->
     <header>
-        <div class="logo">
+        <a href="about.html" class="logo">
             <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
-        </div>
+        </a>
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
             <ul id="nav-list">
@@ -348,6 +362,12 @@
         <div class="about-details">
             <h2>drg. Yuli Kartilla Panjaitan</h2>
             <div class="subtitle">Dokter Gigi Praktisi</div>
+            
+            <!-- REVISI: Tombol Portofolio mengarah ke Instagram Anda -->
+            <a href="https://www.instagram.com/drg.yuli?igsh=MXcycHk3Z3JtbWp4Mw==" target="_blank" class="btn-portfolio">
+                <i class="fa-solid fa-briefcase"></i> Portofolio
+            </a>
+            
             <p>Saya adalah seorang dokter gigi profesional yang berdedikasi tinggi dalam memberikan perawatan kesehatan gigi dan mulut bagi masyarakat. Berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
             
             <div class="skills-title">Keahlian & Layanan Medis:</div>
@@ -382,7 +402,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (PETA DIHAPUS) -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">

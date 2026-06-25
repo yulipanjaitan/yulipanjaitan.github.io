@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - drg. Yuli Kartilla Panjaitan</title>
-    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -55,6 +53,8 @@
             color: #1d2939;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            text-decoration: none; /* Menghapus underline karena berupa link */
+            cursor: pointer;
         }
 
         .logo i {
@@ -96,7 +96,7 @@
             cursor: pointer;
         }
 
-        /* SECTION: Hero Banner (Center Layout - Tanpa Gambar Rusak) */
+        /* SECTION: Hero Banner */
         .hero-section {
             padding: 180px 8% 60px 8%;
             background: linear-gradient(135deg, #f5fcf9 0%, #ffffff 100%);
@@ -156,12 +156,12 @@
             box-shadow: 0 8px 20px rgba(38, 212, 165, 0.4);
         }
 
-        .btn-cv {
+        .btn-about {
             background-color: #1d2939; 
             box-shadow: 0 5px 15px rgba(29, 41, 57, 0.15);
         }
 
-        .btn-cv:hover {
+        .btn-about:hover {
             background-color: #111827;
             box-shadow: 0 8px 20px rgba(29, 41, 57, 0.3);
         }
@@ -204,7 +204,6 @@
             z-index: 2;
         }
 
-        /* Gaya Caption Mengambang Stabil */
         .slide-caption {
             position: absolute;
             bottom: 20px;
@@ -385,7 +384,7 @@
             color: white;
         }
 
-        /* MODAL POPUP PANDUAN PENDAFTARAN */
+        /* MODAL POPUP PANDUAN PENDAFTARAN RESPONSIVE */
         .modal {
             display: none;
             position: fixed;
@@ -400,6 +399,7 @@
             backdrop-filter: blur(4px);
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding: 20px;
         }
 
         .modal.show {
@@ -409,14 +409,24 @@
 
         .modal-content {
             background-color: #ffffff;
-            padding: 35px;
+            padding: 30px 25px 25px 25px;
             border-radius: 16px;
-            width: 90%;
-            max-width: 540px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             position: relative;
             transform: translateY(-30px);
             transition: transform 0.3s ease;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background-color: #d0d5dd;
+            border-radius: 4px;
         }
 
         .modal.show .modal-content {
@@ -427,11 +437,13 @@
             position: absolute;
             right: 20px;
             top: 15px;
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 32px;
+            font-weight: 600;
             color: #9ca3af;
             cursor: pointer;
             transition: color 0.2s;
+            line-height: 1;
+            padding: 5px;
         }
 
         .close-btn:hover {
@@ -439,10 +451,11 @@
         }
 
         .modal h2 {
-            font-size: 22px;
+            font-size: 20px;
             color: #0c4a60;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            padding-right: 30px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -609,11 +622,10 @@
 </head>
 <body>
 
-    <!-- Header / Navigasi -->
     <header>
-        <div class="logo">
+        <a href="about.html" class="logo">
             <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
-        </div>
+        </a>
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
             <ul id="nav-list">
@@ -625,7 +637,6 @@
         </nav>
     </header>
 
-    <!-- SECTION: Hero Banner (SUDAH BERSIH TANPA GAMBAR RUSAK) -->
     <section class="hero-section">
         <div class="hero-text">
             <h1>Healthy Teeth, <span>Beautiful Smile</span></h1>
@@ -635,24 +646,23 @@
                 <button class="btn-primary" onclick="toggleModal(true)">
                     <i class="fa-solid fa-book-medical" style="margin-right: 6px;"></i> Panduan Pendaftaran
                 </button>
-                <a href="CV_drg_Yuli_Kartilla_Panjaitan.pdf" class="btn-primary btn-cv" download>
-                    <i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i> Download CV
+                <a href="about.html" class="btn-primary btn-about">
+                    <i class="fa-regular fa-user" style="margin-right: 8px;"></i> About Me
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: Bingkai Slider Klinik Dengan Teks Caption Otomatis -->
     <section class="slider-section">
         <div class="hero-slider-container">
-            <div class="slide active" style="background-image: url('lanera-interior.jpg');">
+            <div class="slide active" style="background-image: url('lanera-luar.jpg');">
+                <div class="slide-caption">Tampak Depan Lanera Dental Care</div>
+            </div>
+            <div class="slide" style="background-image: url('lanera-interior.jpg');">
                 <div class="slide-caption">Interior Lanera Dental Care</div>
             </div>
             <div class="slide" style="background-image: url('tp-dental-luar.jpg');">
                 <div class="slide-caption">Tampak Depan TP Dental</div>
-            </div>
-            <div class="slide" style="background-image: url('lanera-luar.jpg');">
-                <div class="slide-caption">Tampak Depan Lanera Dental Care</div>
             </div>
             <div class="slide" style="background-image: url('tp-dental-pintu.jpg');">
                 <div class="slide-caption">Interior TP Dental</div>
@@ -660,7 +670,6 @@
         </div>
     </section>
 
-    <!-- SECTION: Services -->
     <section class="services-section">
         <h2 class="section-title">Layanan Medis & Dental</h2>
         <div class="section-subtitle">Our Professional Services</div>
@@ -688,13 +697,11 @@
         </div>
     </section>
 
-    <!-- SECTION: Locations & Schedules -->
     <section class="locations-section" id="locations">
         <h2 class="section-title">Locations & Schedules</h2>
         <div class="section-subtitle">Practice Locations & Contact Info</div>
         <div class="locations-grid">
             
-            <!-- KLINIK 1 -->
             <div class="location-card">
                 <div>
                     <h3>Lanera Dental Care</h3>
@@ -710,7 +717,6 @@
                 </div>
             </div>
 
-            <!-- KLINIK 2 -->
             <div class="location-card">
                 <div>
                     <h3>TP Dental</h3>
@@ -723,7 +729,6 @@
                 </div>
             </div>
 
-            <!-- KARTU INFORMASI EXTRA -->
             <div class="location-card" style="background-color: #ebf7fd;">
                 <div>
                     <h3>Informasi Pasien</h3>
@@ -738,13 +743,11 @@
         </div>
     </section>
 
-    <!-- SECTION: Contact Us Link Anchor -->
     <section id="contact" style="padding: 10px 0;"></section>
 
-    <!-- MODAL POPUP PANDUAN PENDAFTARAN -->
     <div id="panduanModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="toggleModal(false)">&times;</span>
+            <span class="close-btn" onclick="toggleModal(false)">×</span>
             <h2><i class="fa-solid fa-book-medical" style="color: #26d4a5;"></i> Panduan Pendaftaran</h2>
             <div style="border-top: 1px solid #f0f4f8; margin-bottom: 20px;"></div>
             
@@ -768,7 +771,7 @@
                     <div class="step-text">
                         <h4>Kirimkan Format Booking</h4>
                         <p>Kirim pesan otomatis yang tersedia atau gunakan pola teks mandiri berikut agar proses input jadwal berjalan lebih cepat:</p>
-                        <blockquote>
+                        blockquote>
                             • <strong>Nama Pasien:</strong> <br>
                             • <strong>Klinik Tujuan:</strong> (KBC / Mitra Raya / TP Dental)<br>
                             • <strong>Hari & Tanggal Kunjungan:</strong> <br>
@@ -787,7 +790,6 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -811,12 +813,11 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p>© 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
             <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
         </div>
     </footer>
 
-    <!-- JavaScript Interaksi -->
     <script>
         const header = document.querySelector('header');
         function checkScroll() {
@@ -859,7 +860,6 @@
             navList.classList.toggle('active');
         });
 
-        // LOGIC AUTOMATIC IMAGE SLIDER STABIL LINTAS PLATFORM
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
 

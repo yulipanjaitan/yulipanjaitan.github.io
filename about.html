@@ -5,537 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - drg. Yuli Kartilla Panjaitan</title>
     
-    <!-- BARU: SEO & Social Media Share Meta Tags (Poin 3) -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Profil profesional dan riwayat akademis klinis drg. Yuli Kartilla Panjaitan, praktisi kedokteran gigi modern di Kota Batam.">
     <meta property="og:title" content="About Me - drg. Yuli Kartilla Panjaitan">
     <meta property="og:description" content="Kenali lebih dekat profil, keahlian dental medis, serta riwayat pengalaman dari drg. Yuli Kartilla Panjaitan.">
     <meta property="og:type" content="website">
 
-    <!-- FAVICON: Data URI SVG Gigi Hijau Mint (Aman & Bebas Blokir Browser) -->
+    <!-- FAVICON: Data URI SVG Gigi Hijau Mint -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2326d4a5' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
-    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #ffffff;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* HEADER INTERAKTIF: Rapat Ditengah & Simetris */
-        header {
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            gap: 50px; 
-            padding: 22px 5%;
-            background: #f8fafc;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        header.scrolled {
-            padding: 14px 5%;
-            background: #f1f5f9;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            gap: 40px; 
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 19px;
-            color: #1d2939;
-            letter-spacing: 0.5px;
-            text-decoration: none;
-            cursor: pointer;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .logo span.small-title {
-            text-transform: lowercase; 
-            font-weight: 600;
-        }
-
-        .logo span.main-title {
-            text-transform: uppercase; 
-            margin-left: 4px;
-        }
-
-        .logo i {
-            color: #26d4a5;
-            margin-right: 10px;
-            font-size: 22px;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .logo:hover {
-            transform: scale(1.02);
-        }
-
-        .logo:hover i {
-            transform: rotate(20deg) scale(1.1);
-            color: #1fc094;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
-
-        nav ul li {
-            margin: 0 16px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #475467;
-            font-size: 14px;
-            font-weight: 600;
-            position: relative;
-            padding: 6px 0;
-            transition: color 0.3s ease;
-            white-space: nowrap;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #26d4a5;
-            transform-origin: bottom right;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        nav ul li a:hover {
-            color: #26d4a5;
-        }
-
-        nav ul li a:hover::after, nav ul li a.active::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        nav ul li a.active {
-            color: #26d4a5;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-            transform: scale(1.1);
-            color: #26d4a5;
-        }
-
-        /* SECTION: Tentang Dokter */
-        .about-section {
-            padding: 160px 8% 90px 8%;
-            background-color: #ffffff;
-            display: grid;
-            grid-template-columns: 1fr 1.6fr;
-            gap: 50px;
-            align-items: start;
-        }
-
-        .about-img-box {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-            position: sticky;
-            top: 120px;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-        }
-
-        .about-img-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            transform: scale(1);
-            filter: brightness(0.98);
-            transition: transform 0.5s ease, filter 0.4s ease;
-        }
-
-        .about-img-box:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(38, 212, 165, 0.15);
-        }
-
-        .about-img-box:hover img {
-            transform: scale(1.03);
-            filter: brightness(1.02);
-        }
-
-        .profile-highlight-card {
-            background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
-            padding: 35px 30px;
-            border-radius: 16px;
-            border: 1px solid #ccfbf1;
-            box-shadow: 0 10px 25px rgba(38, 212, 165, 0.04);
-            margin-bottom: 35px;
-            transform: translateY(0);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-        }
-
-        .profile-highlight-card:hover {
-            transform: translateY(-4px);
-            border-color: #99f6e4;
-            box-shadow: 0 15px 30px rgba(38, 212, 165, 0.1);
-        }
-
-        .about-details h2 {
-            font-size: 30px;
-            color: #1d2939;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .about-details .subtitle {
-            font-size: 15px;
-            color: #0c4a60;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 15px;
-        }
-
-        .btn-portfolio {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #1d2939;
-            color: white;
-            padding: 10px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            box-shadow: 0 4px 12px rgba(29, 41, 57, 0.15);
-            transition: all 0.3s;
-            margin-bottom: 20px;
-        }
-
-        .btn-portfolio:hover {
-            background-color: #111827;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(29, 41, 57, 0.3);
-        }
-
-        .about-details p.desc {
-            font-size: 14px;
-            color: #344054;
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        /* GRID KEAHLIAN */
-        .skills-title-main {
-            font-size: 18px;
-            color: #1d2939;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .skills-title-main::after {
-            content: "";
-            flex-grow: 1;
-            height: 2px;
-            background-color: #f0f4f8;
-        }
-
-        .skills-grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 45px;
-        }
-
-        .skill-card-box {
-            background: #ffffff;
-            padding: 22px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid #f2f4f7;
-            transition: all 0.3s;
-        }
-
-        .skill-card-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            border-color: #26d4a5;
-        }
-
-        .skill-card-icon {
-            font-size: 24px;
-            color: #26d4a5;
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .skill-card-box h4 {
-            font-size: 14px;
-            color: #1d2939;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .skill-card-box p {
-            font-size: 12px;
-            color: #667085;
-            line-height: 1.5;
-        }
-
-        /* RIWAYAT PENDIDIKAN */
-        .history-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .history-block {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 14px;
-            border: 1px solid #f2f4f7;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
-            transform: translateY(0);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-        }
-
-        .history-block:hover {
-            transform: translateY(-5px);
-            border-color: #26d4a5;
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.04);
-        }
-
-        .history-block h3 {
-            font-size: 16px;
-            color: #1d2939;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            border-bottom: 2px solid #f0f4f8;
-            padding-bottom: 8px;
-            transition: border-color 0.3s ease;
-        }
-
-        .history-block:hover h3 {
-            border-color: rgba(38, 212, 165, 0.3);
-        }
-
-        .history-block h3 i {
-            color: #26d4a5;
-            transition: transform 0.3s ease;
-        }
-
-        .history-block:hover h3 i {
-            transform: scale(1.15);
-        }
-
-        .history-list {
-            list-style: none;
-        }
-
-        .history-item {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            font-size: 13.5px;
-            color: #555;
-            line-height: 1.5;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .history-block:hover .history-item {
-            color: #333;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        
+        /* MODERN TRANSITION: Dasar Opacity Efek Pindah Halaman */
+        body { 
+            background-color: #ffffff; 
+            color: #333; 
+            overflow-x: hidden; 
+            opacity: 0; 
+            transition: opacity 0.4s ease-in-out; 
         }
         
-        .history-item:hover {
-            transform: translateX(3px);
-            color: #000 !important;
-        }
+        header { display: flex; justify-content: center; align-items: center; gap: 50px; padding: 22px 5%; background: #f8fafc; position: fixed; width: 100%; z-index: 1000; top: 0; left: 0; border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        header.scrolled { padding: 14px 5%; background: #f1f5f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); gap: 40px; }
+        
+        .logo { display: flex; align-items: center; font-weight: 700; font-size: 19px; color: #1d2939; letter-spacing: 0.5px; text-decoration: none; cursor: pointer; flex-shrink: 0; transition: transform 0.3s ease; }
+        .logo span.small-title { text-transform: lowercase; font-weight: 600; }
+        .logo span.main-title { text-transform: uppercase; margin-left: 4px; }
+        .logo i { color: #26d4a5; margin-right: 10px; font-size: 22px; transition: transform 0.4s ease; }
+        .logo:hover { transform: scale(1.02); }
+        .logo:hover i { transform: rotate(20deg) scale(1.1); color: #1fc094; }
+        
+        nav { display: flex; align-items: center; }
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin: 0 16px; }
+        nav ul li a { text-decoration: none; color: #475467; font-size: 14px; font-weight: 600; position: relative; padding: 6px 0; transition: color 0.3s ease; white-space: nowrap; }
+        nav ul li a::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: 0; left: 0; background-color: #26d4a5; transform-origin: bottom right; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        nav ul li a:hover { color: #26d4a5; }
+        nav ul li a:hover::after, nav ul li a.active::after { transform: scaleX(1); transform-origin: bottom left; }
+        nav ul li a.active { color: #26d4a5; }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
 
-        .history-item::before {
-            content: "•";
-            color: #26d4a5;
-            font-size: 18px;
-            position: absolute;
-            left: 0;
-            top: -2px;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
+        .about-section { padding: 160px 8% 90px 8%; background-color: #ffffff; display: grid; grid-template-columns: 1fr 1.6fr; gap: 50px; align-items: start; }
+        .about-img-box { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); position: sticky; top: 120px; transition: transform 0.4s ease; }
+        .about-img-box img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.5s ease; }
+        .about-img-box:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(38, 212, 165, 0.15); }
+        .about-img-box:hover img { transform: scale(1.03); }
 
-        .history-item:hover::before {
-            transform: scale(1.3);
-        }
+        .profile-highlight-card { background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%); padding: 35px 30px; border-radius: 16px; border: 1px solid #ccfbf1; margin-bottom: 35px; transition: transform 0.4s ease; }
+        .profile-highlight-card:hover { transform: translateY(-4px); border-color: #99f6e4; }
+        .about-details h2 { font-size: 30px; color: #1d2939; font-weight: 700; }
+        .about-details .subtitle { font-size: 15px; color: #0c4a60; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; }
+        .btn-portfolio { display: inline-flex; align-items: center; gap: 8px; background-color: #1d2939; color: white; padding: 10px 22px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 13px; }
 
-        /* SECTION: Footer */
-        footer {
-            background-color: #111827;
-            color: #bcbfcd;
-            padding: 60px 8% 30px 8%;
-            font-size: 14px;
-        }
+        .skills-title-main { font-size: 18px; color: #1d2939; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .skills-title-main::after { content: ""; flex-grow: 1; height: 2px; background-color: #f0f4f8; }
+        .skills-grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 45px; }
+        .skill-card-box { background: #ffffff; padding: 22px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f2f4f7; transition: all 0.3s; }
+        .skill-card-box:hover { transform: translateY(-3px); border-color: #26d4a5; box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+        .skill-card-icon { font-size: 24px; color: #26d4a5; margin-bottom: 12px; }
 
-        .footer-container {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 50px;
-            margin-bottom: 40px;
-        }
+        .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .history-block { background: #ffffff; padding: 25px; border-radius: 14px; border: 1px solid #f2f4f7; transition: all 0.4s ease; }
+        .history-block:hover { transform: translateY(-5px); border-color: #26d4a5; }
+        .history-block h3 { font-size: 16px; color: #1d2939; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-weight: 700; border-bottom: 2px solid #f0f4f8; padding-bottom: 8px; }
+        .history-list { list-style: none; }
+        .history-item { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 13.5px; color: #555; }
+        .history-item::before { content: "•"; color: #26d4a5; font-size: 18px; position: absolute; left: 0; top: -2px; }
 
-        .footer-brand h3 {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .footer-brand p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-size: 13px;
-        }
-
-        .footer-socials-link a {
-            color: #bcbfcd;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            transition: color 0.3s;
-            font-size: 13px;
-        }
-
-        .footer-socials-link a:hover {
-            color: #26d4a5;
-        }
-
-        .footer-links h4 {
-            color: white;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links ul li a {
-            color: #bcbfcd;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 13px;
-        }
-
-        .footer-links ul li a:hover {
-            color: #26d4a5;
-        }
-
-        /* REVISI: Footer Bottom dengan Perlindungan Privasi Pasien (Poin 2) */
-        .footer-bottom {
-            border-top: 1px solid #1f2937;
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 12px;
-        }
-
-        .footer-bottom .privacy-note {
-            color: #888c9b;
-            font-size: 11px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+        footer { background-color: #111827; color: #bcbfcd; padding: 60px 8% 30px 8%; font-size: 14px; }
+        .footer-container { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; margin-bottom: 40px; }
+        .footer-bottom { border-top: 1px solid #1f2937; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 12px; }
+        .footer-bottom .privacy-note { color: #888c9b; font-size: 11px; display: flex; align-items: center; gap: 6px; }
 
         @media (max-width: 992px) {
-            header { 
-                justify-content: space-between; 
-                padding: 16px 5%; 
-                background: #f8fafc !important; 
-                position: fixed; 
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-            }
+            header { justify-content: space-between; padding: 16px 5%; background: #f8fafc !important; }
             .menu-toggle { display: block; color: #111; }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #f8fafc;
-                padding: 20px;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-                border-bottom: 1px solid #e2e8f0;
-            }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #f8fafc; padding: 20px; }
             nav ul.active { display: flex; }
-            nav ul li { margin: 10px 0; }
-            .about-section { grid-template-columns: 1fr; gap: 40px; padding: 130px 5% 40px 5%; }
+            .about-section { grid-template-columns: 1fr; padding: 130px 5% 40px 5%; }
             .about-img-box { position: relative; top: 0; }
-            .profile-highlight-card { padding: 25px 20px; }
-            .history-grid { grid-template-columns: 1fr; gap: 25px; }
-            .footer-container { grid-template-columns: 1fr; gap: 30px; }
-            .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+            .history-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigasi -->
+    <!-- Header -->
     <header>
         <a href="about.html" class="logo">
             <i class="fa-solid fa-tooth"></i>
@@ -560,19 +120,16 @@
         </div>
         
         <div class="about-details">
-            
             <div class="profile-highlight-card">
                 <h2>drg. Yuli Kartilla Panjaitan</h2>
                 <div class="subtitle">Dokter Gigi Praktisi</div>
-                
                 <a href="https://www.instagram.com/drg.yuli?igsh=MXcycHk3Z3JtbWp4Mw==" target="_blank" class="btn-portfolio">
                     <i class="fa-solid fa-briefcase"></i> Portofolio
                 </a>
-                
                 <p class="desc">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
             </div>
             
-            <!-- KEAHLIAN & LAYANAN MEDIS -->
+            <!-- Keahlian -->
             <div class="skills-title-main">Keahlian & Layanan Medis</div>
             <div class="skills-grid-layout">
                 <div class="skill-card-box">
@@ -595,29 +152,9 @@
                     <h4>Penambalan Estetik</h4>
                     <p>Restorasi area karies gigi menggunakan resin komposit sewarna asli dengan teknik pengerjaan presisi.</p>
                 </div>
-                <div class="skill-card-box">
-                    <i class="fa-solid fa-heart-pulse skill-card-icon"></i>
-                    <h4>Perawatan Saluran Akar</h4>
-                    <p>Terapi endodontik khusus untuk mengatasi infeksi pulpa mendalam tanpa perlu melakukan pencabutan gigi.</p>
-                </div>
-                <div class="skill-card-box">
-                    <i class="fa-solid fa-scissors skill-card-icon"></i>
-                    <h4>Pencabutan Gigi</h4>
-                    <p>Tindakan pembedahan minor pelepasan elemen gigi yang sudah rusak parah atau impaksi dengan anestesi lokal.</p>
-                </div>
-                <div class="skill-card-box">
-                    <i class="fa-solid fa-cubes skill-card-icon"></i>
-                    <h4>Gigi Tiruan (Palsu)</h4>
-                    <p>Pembuatan protesa gigi lepasan maupun cekat untuk menggantikan fungsi fonetik dan estetika gigi yang tanggal.</p>
-                </div>
-                <div class="skill-card-box">
-                    <i class="fa-solid fa-child skill-card-icon"></i>
-                    <h4>Dental Anak (Pedodonti)</h4>
-                    <p>Pencegahan dini gigi berlubang pada anak-anak melalui pendekatan perawatan yang ramah, nyaman, dan edukatif.</p>
-                </div>
             </div>
             
-            <!-- RIWAYAT & PENGALAMAN -->
+            <!-- Riwayat -->
             <div class="history-grid">
                 <div class="history-block">
                     <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
@@ -626,43 +163,19 @@
                         <li class="history-item">Profesi Dokter Gigi (2021) - Universitas Sumatera Utara</li>
                     </ul>
                 </div>
-                
                 <div class="history-block">
                     <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
                     <ul class="history-list">
                         <li class="history-item">Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)</li>
                         <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)</li>
-                        <li class="history-item">Memiliki pengalaman praktis (lebih dari 5 tahun experience) dalam bidang Dentistry hingga sekarang</li>
                     </ul>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>drg. Yuli Kartilla Panjaitan</h3>
-                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam. Temukan senyum sehat dan rasa percaya diri Anda kembali melalui perawatan dental modern terbaik kami.</p>
-                <div class="footer-socials-link">
-                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @laneradentalcare</a>
-                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @tpdentalbatam</a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="index.html#locations">Locations & Schedules</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
             <p class="privacy-note"><i class="fa-solid fa-user-shield" style="color: #26d4a5;"></i> Seluruh data format reservasi medis pasien dilindungi & bersifat rahasia.</p>
@@ -671,22 +184,34 @@
     </footer>
 
     <script>
+        // Trigger Efek Masuk Lembut Fade-In Saat Dom Siap
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Interseptor Link Internal untuk Efek Fade-Out Modern di Layar HP Pasien
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && !href.startsWith('#') && this.getAttribute('target') !== '_blank') {
+                    e.preventDefault();
+                    document.body.style.opacity = '0';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400);
+                }
+            });
+        });
+
         const header = document.querySelector('header');
-        function checkScroll() {
-            const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > 30) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
+        window.addEventListener('scroll', () => {
+            if ((window.scrollY || window.pageYOffset) > 30) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
 
         const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
         mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
+            document.getElementById('nav-list').classList.toggle('active');
         });
     </script>
 </body>

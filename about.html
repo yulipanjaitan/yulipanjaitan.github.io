@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - drg. Yuli Kartilla Panjaitan</title>
+    
+    <!-- BARU: SEO & Social Media Share Meta Tags (Poin 3) -->
+    <meta name="description" content="Profil profesional dan riwayat akademis klinis drg. Yuli Kartilla Panjaitan, praktisi kedokteran gigi modern di Kota Batam.">
+    <meta property="og:title" content="About Me - drg. Yuli Kartilla Panjaitan">
+    <meta property="og:description" content="Kenali lebih dekat profil, keahlian dental medis, serta riwayat pengalaman dari drg. Yuli Kartilla Panjaitan.">
+    <meta property="og:type" content="website">
+
+    <!-- FAVICON: Data URI SVG Gigi Hijau Mint (Aman & Bebas Blokir Browser) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2326d4a5' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -23,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* REVISI HEADER INTERAKTIF: Rapat Ditengah & Simetris */
+        /* HEADER INTERAKTIF: Rapat Ditengah & Simetris */
         header {
             display: flex;
             justify-content: center; 
@@ -48,7 +58,6 @@
             gap: 40px; 
         }
 
-        /* Teks Logo drg. diubah menjadi huruf kecil cerdas */
         .logo {
             display: flex;
             align-items: center;
@@ -103,7 +112,6 @@
             margin: 0 16px;
         }
 
-        /* INTERAKTIF HEADER: Menu Navigasi Bergaris Bawah Mengalir */
         nav ul li a {
             text-decoration: none;
             color: #475467;
@@ -255,7 +263,7 @@
             margin-bottom: 0;
         }
 
-        /* GRID KEAHLIAN & LAYANAN */
+        /* GRID KEAHLIAN */
         .skills-title-main {
             font-size: 18px;
             color: #1d2939;
@@ -315,7 +323,7 @@
             line-height: 1.5;
         }
 
-        /* BLOCK RIWAYAT & PENGALAMAN */
+        /* RIWAYAT PENDIDIKAN */
         .history-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -473,6 +481,26 @@
             color: #26d4a5;
         }
 
+        /* REVISI: Footer Bottom dengan Perlindungan Privasi Pasien (Poin 2) */
+        .footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 12px;
+        }
+
+        .footer-bottom .privacy-note {
+            color: #888c9b;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         @media (max-width: 992px) {
             header { 
                 justify-content: space-between; 
@@ -501,11 +529,13 @@
             .profile-highlight-card { padding: 25px 20px; }
             .history-grid { grid-template-columns: 1fr; gap: 25px; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navigasi -->
     <header>
         <a href="about.html" class="logo">
             <i class="fa-solid fa-tooth"></i>
@@ -523,6 +553,7 @@
         </nav>
     </header>
 
+    <!-- SECTION: Tentang Dokter -->
     <section class="about-section">
         <div class="about-img-box">
             <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
@@ -538,9 +569,10 @@
                     <i class="fa-solid fa-briefcase"></i> Portofolio
                 </a>
                 
-                <p class="desc">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi and mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
+                <p class="desc">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
             </div>
             
+            <!-- KEAHLIAN & LAYANAN MEDIS -->
             <div class="skills-title-main">Keahlian & Layanan Medis</div>
             <div class="skills-grid-layout">
                 <div class="skill-card-box">
@@ -585,6 +617,7 @@
                 </div>
             </div>
             
+            <!-- RIWAYAT & PENGALAMAN -->
             <div class="history-grid">
                 <div class="history-block">
                     <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
@@ -607,6 +640,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -630,7 +664,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p class="privacy-note"><i class="fa-solid fa-user-shield" style="color: #26d4a5;"></i> Seluruh data format reservasi medis pasien dilindungi & bersifat rahasia.</p>
             <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
         </div>
     </footer>

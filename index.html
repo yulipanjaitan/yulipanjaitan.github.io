@@ -26,6 +26,18 @@
             overflow-x: hidden;
         }
 
+        /* Keyframes untuk Animasi Efek Masuk (Entrance) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Navigation Bar */
         header {
             display: flex;
@@ -100,7 +112,7 @@
             cursor: pointer;
         }
 
-        /* SECTION: Hero Banner */
+        /* SECTION: Hero Banner Interaktif Komplit */
         .hero-section {
             padding: 200px 8% 80px 8%;
             background: linear-gradient(135deg, #eefaf6 0%, #e0f2fe 100%);
@@ -114,30 +126,57 @@
             max-width: 750px;
         }
 
+        /* Efek Masuk & Hover Interaktif pada Judul */
         .hero-text h1 {
             font-size: 42px;
             color: #1d2939;
             line-height: 1.2;
             margin-bottom: 15px;
             font-weight: 700;
+            cursor: default;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+            transition: transform 0.4s ease, text-shadow 0.4s ease;
+        }
+
+        .hero-text h1:hover {
+            transform: scale(1.02);
+            text-shadow: 0 10px 20px rgba(29, 41, 57, 0.05);
         }
 
         .hero-text h1 span {
             color: #26d4a5;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
+        /* Judul Span Bersinar saat di-hover */
+        .hero-text h1:hover span {
+            color: #1fc094;
+            text-shadow: 0 0 12px rgba(38, 212, 165, 0.3);
+        }
+
+        /* Efek Masuk & Hover Interaktif pada Deskripsi */
         .hero-text p {
             font-size: 15px;
             color: #475467;
             line-height: 1.8;
             margin-bottom: 30px;
+            cursor: default;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+            transition: color 0.3s ease, transform 0.4s ease;
         }
 
+        .hero-text p:hover {
+            color: #1d2939;
+            transform: translateY(-2px);
+        }
+
+        /* Efek Masuk pada Container Tombol */
         .hero-buttons {
             display: flex; 
             gap: 15px; 
             flex-wrap: wrap;
             justify-content: center;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
         }
 
         .btn-primary {
@@ -150,15 +189,15 @@
             font-weight: 600;
             font-size: 14px;
             box-shadow: 0 5px 15px rgba(38, 212, 165, 0.3);
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             border: none;
         }
 
         .btn-primary:hover {
             background-color: #1fc094;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(38, 212, 165, 0.4);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(38, 212, 165, 0.45);
         }
 
         .btn-about {
@@ -168,7 +207,8 @@
 
         .btn-about:hover {
             background-color: #111827;
-            box-shadow: 0 8px 20px rgba(29, 41, 57, 0.3);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(29, 41, 57, 0.35);
         }
 
         /* SECTION: Slider Gambar Klinik Interaktif */
@@ -664,7 +704,7 @@
         </nav>
     </header>
 
-    <!-- SECTION: Hero Banner -->
+    <!-- SECTION: Hero Banner (Interaktif Teks + Tombol) -->
     <section class="hero-section">
         <div class="hero-text">
             <h1>Healthy Teeth, <span>Beautiful Smile</span></h1>
